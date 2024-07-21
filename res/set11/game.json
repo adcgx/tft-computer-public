@@ -1,0 +1,927 @@
+{
+    "version": "0.1",
+    "tft_patch": "14.8.1",
+    "traits": [
+        {
+            "dd_id": "TFT11_Dragonlord",
+            "value": [
+                0,
+                0.5,
+                1,
+                2.5,
+                3
+            ],
+            "scalar": 2
+        },
+        {
+            "dd_id": "TFT11_Dryad",
+            "value": [
+                0,
+                1.2,
+                1.2,
+                2,
+                2,
+                4.15
+            ],
+            "scalar": 1
+        },
+        {
+            "dd_id": "TFT11_Fated",
+            "value": [
+                0,
+                0,
+                1.5,
+                1.25,
+                2,
+                2,
+                3.5,
+                3.15,
+                3.15,
+                5
+            ],
+            "scalar": 1
+        },
+        {
+            "dd_id": "TFT11_Fortune",
+            "value": [
+                0,
+                0,
+                1,
+                2,
+                2,
+                2,
+                5
+            ],
+            "scalar": 0
+        },
+        {
+            "dd_id": "TFT11_Ghostly",
+            "value": [
+                0,
+                1.2,
+                1.2,
+                2,
+                2,
+                4.15,
+                4.15,
+                6.5
+            ],
+            "scalar": 1
+        },
+        {
+            "dd_id": "TFT11_Heavenly",
+            "value": [
+                0,
+                0.5,
+                1,
+                1.5,
+                2,
+                3.5,
+                4,
+                5.5
+            ],
+            "scalar": 2
+        },
+        {
+            "dd_id": "TFT11_InkShadow",
+            "value": [
+                0,
+                0,
+                2,
+                2,
+                4,
+                4,
+                8.5
+            ],
+            "scalar": 1
+        },
+        {
+            "dd_id": "TFT11_Mythic",
+            "value": [
+                0,
+                0,
+                1.2,
+                1.2,
+                2,
+                2,
+                3.7,
+                3.7,
+                3.7,
+                6.5
+            ],
+            "scalar": 1
+        },
+        {
+            "dd_id": "TFT11_Porcelain",
+            "value": [
+                0,
+                1.5,
+                1.5,
+                3,
+                3,
+                6
+            ],
+            "scalar": 1
+        },
+        {
+            "dd_id": "TFT11_Storyweaver",
+            "value": [
+                0,
+                0,
+                4,
+                4,
+                12,
+                12,
+                25,
+                25,
+                25,
+                60
+            ],
+            "scalar": 0
+        },
+        {
+            "dd_id": "TFT11_Umbral",
+            "value": [
+                0,
+                1.2,
+                1.2,
+                2,
+                2,
+                4.15,
+                4.15,
+                4.15,
+                6.5
+            ],
+            "scalar": 1
+        },
+        {
+            "dd_id": "TFT11_Altruist",
+            "value": [
+                0,
+                0.5,
+                1,
+                2.5
+            ],
+            "scalar": 2
+        },
+        {
+            "dd_id": "TFT11_Arcanist",
+            "value": [
+                0,
+                0.75,
+                0.75,
+                1,
+                1,
+                2,
+                2,
+                3.5
+            ],
+            "scalar": 2
+        },
+        {
+            "dd_id": "TFT11_Artist",
+            "value": [],
+            "scalar": 1
+        },
+        {
+            "dd_id": "TFT11_Behemoth",
+            "value": [
+                0,
+                1.2,
+                1.2,
+                2,
+                2,
+                4.15
+            ],
+            "scalar": 1
+        },
+        {
+            "dd_id": "TFT11_Bruiser",
+            "value": [
+                0,
+                1.2,
+                1.2,
+                2,
+                2,
+                4.15,
+                4.15,
+                6
+            ],
+            "scalar": 1
+        },
+        {
+            "dd_id": "TFT11_Duelist",
+            "value": [
+                0,
+                1.2,
+                1.2,
+                2,
+                2,
+                4.15,
+                4.15,
+                6
+            ],
+            "scalar": 1
+        },
+        {
+            "dd_id": "TFT11_Exalted",
+            "value": [
+                0,
+                0,
+                1,
+                1,
+                2.5
+            ],
+            "scalar": 2
+        },
+        {
+            "dd_id": "TFT11_Great",
+            "value": [],
+            "scalar": 1
+        },
+        {
+            "dd_id": "TFT11_Invoker",
+            "value": [
+                0,
+                0.75,
+                0.75,
+                1.5,
+                1.5,
+                3
+            ],
+            "scalar": 2
+        },
+        {
+            "dd_id": "TFT11_Lovers",
+            "value": [],
+            "scalar": 1
+        },
+        {
+            "dd_id": "TFT11_Reaper",
+            "value": [
+                0,
+                2.5,
+                2.5,
+                4.25
+            ],
+            "scalar": 1
+        },
+        {
+            "dd_id": "TFT11_Sage",
+            "value": [
+                0,
+                0.5,
+                0.8,
+                1.5,
+                3
+            ],
+            "scalar": 2
+        },
+        {
+            "dd_id": "TFT11_Sniper",
+            "value": [
+                0,
+                1.2,
+                1.2,
+                2,
+                2,
+                6
+            ],
+            "scalar": 1
+        },
+        {
+            "dd_id": "TFT11_SpiritWalker",
+            "value": [],
+            "scalar": 1
+        },
+        {
+            "dd_id": "TFT11_Trickshot",
+            "value": [
+                0,
+                2.5,
+                2.5,
+                4.15
+            ],
+            "scalar": 1
+        },
+        {
+            "dd_id": "TFT11_Warden",
+            "value": [
+                0,
+                1.2,
+                1.2,
+                2,
+                2,
+                4.15
+            ],
+            "scalar": 1
+        }
+    ],
+    "units": [
+        {
+            "dd_id": "TFT11_Aatrox",
+            "cost": 2,
+            "hidden_value": 0.1,
+            "traits": [
+                4,
+                6,
+                15
+            ]
+        },
+        {
+            "dd_id": "TFT11_Ahri",
+            "cost": 1,
+            "hidden_value": 0,
+            "traits": [
+                2,
+                12
+            ]
+        },
+        {
+            "dd_id": "TFT11_Alune",
+            "cost": 3,
+            "hidden_value": 0,
+            "traits": [
+                10,
+                19
+            ]
+        },
+        {
+            "dd_id": "TFT11_Amumu",
+            "cost": 3,
+            "hidden_value": 0.1,
+            "traits": [
+                8,
+                26
+            ]
+        },
+        {
+            "dd_id": "TFT11_Annie",
+            "cost": 4,
+            "hidden_value": 0.1,
+            "traits": [
+                3,
+                19
+            ]
+        },
+        {
+            "dd_id": "TFT11_Aphelios",
+            "cost": 3,
+            "hidden_value": 0,
+            "traits": [
+                2,
+                23
+            ]
+        },
+        {
+            "dd_id": "TFT11_Ashe",
+            "cost": 4,
+            "hidden_value": 0,
+            "traits": [
+                8,
+                23
+            ]
+        },
+        {
+            "dd_id": "TFT11_Azir",
+            "cost": 5,
+            "hidden_value": 0,
+            "traits": [
+                1,
+                19
+            ]
+        },
+        {
+            "dd_id": "TFT11_Bard",
+            "cost": 3,
+            "hidden_value": 0,
+            "traits": [
+                7,
+                25
+            ]
+        },
+        {
+            "dd_id": "TFT11_Caitlyn",
+            "cost": 1,
+            "hidden_value": 0,
+            "traits": [
+                4,
+                23
+            ]
+        },
+        {
+            "dd_id": "TFT11_ChoGath",
+            "cost": 1,
+            "hidden_value": 0.1,
+            "traits": [
+                7,
+                14
+            ]
+        },
+        {
+            "dd_id": "TFT11_Darius",
+            "cost": 1,
+            "hidden_value": 0.1,
+            "traits": [
+                10,
+                16
+            ]
+        },
+        {
+            "dd_id": "TFT11_Diana",
+            "cost": 3,
+            "hidden_value": 0.1,
+            "traits": [
+                0,
+                22
+            ]
+        },
+        {
+            "dd_id": "TFT11_Galio",
+            "cost": 4,
+            "hidden_value": 0.1,
+            "traits": [
+                9,
+                15
+            ]
+        },
+        {
+            "dd_id": "TFT11_Garen",
+            "cost": 1,
+            "hidden_value": 0.1,
+            "traits": [
+                9,
+                26
+            ]
+        },
+        {
+            "dd_id": "TFT11_Gnar",
+            "cost": 2,
+            "hidden_value": 0.1,
+            "traits": [
+                1,
+                26
+            ]
+        },
+        {
+            "dd_id": "TFT11_Hwei",
+            "cost": 5,
+            "hidden_value": 3,
+            "traits": [
+                7,
+                13
+            ]
+        },
+        {
+            "dd_id": "TFT11_Illaoi",
+            "cost": 3,
+            "hidden_value": 0.1,
+            "traits": [
+                4,
+                12,
+                26
+            ]
+        },
+        {
+            "dd_id": "TFT11_Irelia",
+            "cost": 5,
+            "hidden_value": 0,
+            "traits": [
+                9,
+                16
+            ]
+        },
+        {
+            "dd_id": "TFT11_Janna",
+            "cost": 2,
+            "hidden_value": 0,
+            "traits": [
+                0,
+                19
+            ]
+        },
+        {
+            "dd_id": "TFT11_Jax",
+            "cost": 1,
+            "hidden_value": 0.1,
+            "traits": [
+                6,
+                26
+            ]
+        },
+        {
+            "dd_id": "TFT11_KaiSa",
+            "cost": 4,
+            "hidden_value": 0,
+            "traits": [
+                6,
+                25
+            ]
+        },
+        {
+            "dd_id": "TFT11_Kayn",
+            "cost": 4,
+            "hidden_value": 0,
+            "traits": [
+                4,
+                21
+            ]
+        },
+        {
+            "dd_id": "TFT11_KhaZix",
+            "cost": 1,
+            "hidden_value": 0,
+            "traits": [
+                5,
+                21
+            ]
+        },
+        {
+            "dd_id": "TFT11_Kindred",
+            "cost": 2,
+            "hidden_value": 0,
+            "traits": [
+                1,
+                2,
+                21
+            ]
+        },
+        {
+            "dd_id": "TFT11_Kobuko",
+            "cost": 1,
+            "hidden_value": 0.1,
+            "traits": [
+                3,
+                15
+            ]
+        },
+        {
+            "dd_id": "TFT11_KogMaw",
+            "cost": 1,
+            "hidden_value": 0,
+            "traits": [
+                7,
+                19,
+                23
+            ]
+        },
+        {
+            "dd_id": "TFT11_LeeSin",
+            "cost": 4,
+            "hidden_value": 0.1,
+            "traits": [
+                0,
+                16
+            ]
+        },
+        {
+            "dd_id": "TFT11_Lillia",
+            "cost": 4,
+            "hidden_value": 0,
+            "traits": [
+                7,
+                19
+            ]
+        },
+        {
+            "dd_id": "TFT11_Lissandra",
+            "cost": 5,
+            "hidden_value": 0,
+            "traits": [
+                8,
+                12
+            ]
+        },
+        {
+            "dd_id": "TFT11_Lux",
+            "cost": 2,
+            "hidden_value": 0,
+            "traits": [
+                8,
+                12
+            ]
+        },
+        {
+            "dd_id": "TFT11_Malphite",
+            "cost": 1,
+            "hidden_value": 0.1,
+            "traits": [
+                5,
+                14
+            ]
+        },
+        {
+            "dd_id": "TFT11_Morgana",
+            "cost": 4,
+            "hidden_value": 0,
+            "traits": [
+                4,
+                22
+            ]
+        },
+        {
+            "dd_id": "TFT11_Nautilus",
+            "cost": 4,
+            "hidden_value": 0.1,
+            "traits": [
+                7,
+                26
+            ]
+        },
+        {
+            "dd_id": "TFT11_Neeko",
+            "cost": 2,
+            "hidden_value": 0,
+            "traits": [
+                5,
+                7,
+                12
+            ]
+        },
+        {
+            "dd_id": "TFT11_Ornn",
+            "cost": 4,
+            "hidden_value": 0.1,
+            "traits": [
+                1,
+                14
+            ]
+        },
+        {
+            "dd_id": "TFT11_Qiyana",
+            "cost": 2,
+            "hidden_value": 0,
+            "traits": [
+                5,
+                16
+            ]
+        },
+        {
+            "dd_id": "TFT11_Rakan",
+            "cost": 5,
+            "hidden_value": 0.1,
+            "traits": [
+                0,
+                11,
+                20
+            ]
+        },
+        {
+            "dd_id": "TFT11_RekSai",
+            "cost": 1,
+            "hidden_value": 0.1,
+            "traits": [
+                1,
+                14
+            ]
+        },
+        {
+            "dd_id": "TFT11_Riven",
+            "cost": 2,
+            "hidden_value": 0.1,
+            "traits": [
+                9,
+                11,
+                15
+            ]
+        },
+        {
+            "dd_id": "TFT11_Senna",
+            "cost": 2,
+            "hidden_value": 0,
+            "traits": [
+                6,
+                23
+            ]
+        },
+        {
+            "dd_id": "TFT11_Sett",
+            "cost": 5,
+            "hidden_value": 0.1,
+            "traits": [
+                2,
+                10,
+                26
+            ]
+        },
+        {
+            "dd_id": "TFT11_Shen",
+            "cost": 2,
+            "hidden_value": 0.1,
+            "traits": [
+                4,
+                14
+            ]
+        },
+        {
+            "dd_id": "TFT11_Sivir",
+            "cost": 1,
+            "hidden_value": 0,
+            "traits": [
+                9,
+                25
+            ]
+        },
+        {
+            "dd_id": "TFT11_Soraka",
+            "cost": 3,
+            "hidden_value": 0,
+            "traits": [
+                5,
+                11
+            ]
+        },
+        {
+            "dd_id": "TFT11_Sylas",
+            "cost": 4,
+            "hidden_value": 0.1,
+            "traits": [
+                10,
+                15
+            ]
+        },
+        {
+            "dd_id": "TFT11_Syndra",
+            "cost": 4,
+            "hidden_value": 0,
+            "traits": [
+                2,
+                12
+            ]
+        },
+        {
+            "dd_id": "TFT11_TahmKench",
+            "cost": 3,
+            "hidden_value": 0.1,
+            "traits": [
+                7,
+                15
+            ]
+        },
+        {
+            "dd_id": "TFT11_Teemo",
+            "cost": 2,
+            "hidden_value": 0,
+            "traits": [
+                3,
+                25
+            ]
+        },
+        {
+            "dd_id": "TFT11_Thresh",
+            "cost": 3,
+            "hidden_value": 0.1,
+            "traits": [
+                2,
+                14
+            ]
+        },
+        {
+            "dd_id": "TFT11_Tristana",
+            "cost": 3,
+            "hidden_value": 0,
+            "traits": [
+                3,
+                16
+            ]
+        },
+        {
+            "dd_id": "TFT11_Udyr",
+            "cost": 5,
+            "hidden_value": 0.1,
+            "traits": [
+                6,
+                14,
+                24
+            ]
+        },
+        {
+            "dd_id": "TFT11_Volibear",
+            "cost": 3,
+            "hidden_value": 0.1,
+            "traits": [
+                6,
+                16
+            ]
+        },
+        {
+            "dd_id": "TFT11_WuKong",
+            "cost": 5,
+            "hidden_value": 0.1,
+            "traits": [
+                5,
+                18,
+                22
+            ]
+        },
+        {
+            "dd_id": "TFT11_Xayah",
+            "cost": 5,
+            "hidden_value": 0,
+            "traits": [
+                0,
+                20,
+                25
+            ]
+        },
+        {
+            "dd_id": "TFT11_Yasuo",
+            "cost": 1,
+            "hidden_value": 0,
+            "traits": [
+                2,
+                16
+            ]
+        },
+        {
+            "dd_id": "TFT11_Yone",
+            "cost": 3,
+            "hidden_value": 0,
+            "traits": [
+                10,
+                21
+            ]
+        },
+        {
+            "dd_id": "TFT11_Yorick",
+            "cost": 2,
+            "hidden_value": 0.1,
+            "traits": [
+                10,
+                14
+            ]
+        },
+        {
+            "dd_id": "TFT11_Zoe",
+            "cost": 3,
+            "hidden_value": 0,
+            "traits": [
+                3,
+                9,
+                12
+            ]
+        },
+        {
+            "dd_id": "TFT11_Zyra",
+            "cost": 2,
+            "hidden_value": 0,
+            "traits": [
+                9,
+                22
+            ]
+        }
+    ],
+    "subsets": [
+        {
+            "forced_units": [
+                37
+            ],
+            "removed_units": [
+                54
+            ],
+            "unit_mods": {},
+            "trait_mods": {},
+            "bonus_traits_mods": [],
+            "comp_size_mod": 0
+        },
+        {
+            "forced_units": [
+                54
+            ],
+            "removed_units": [
+                37
+            ],
+            "unit_mods": {},
+            "trait_mods": {},
+            "bonus_traits_mods": [],
+            "comp_size_mod": 0
+        },
+        {
+            "forced_units": [
+                54,
+                37
+            ],
+            "removed_units": [],
+            "unit_mods": {},
+            "trait_mods": {},
+            "bonus_traits_mods": [
+                {
+                    "trait_index": 0,
+                    "value": -1
+                }
+            ],
+            "comp_size_mod": 0
+        },
+        {
+            "forced_units": [],
+            "removed_units": [
+                54,
+                37
+            ],
+            "unit_mods": {},
+            "trait_mods": {},
+            "bonus_traits_mods": [],
+            "comp_size_mod": 0
+        }
+    ]
+}

@@ -1,0 +1,1137 @@
+{
+    "units_sprite_url": [
+        "https://raw.communitydragon.org/pbe/game/assets/ux/tft/championsplashes/patching/"
+    ],
+    "traits_sprite_url": [
+        "https://raw.communitydragon.org/pbe/game/assets/maps/particles/tft/item_icons/traits/spatula/set12/",
+        "https://raw.communitydragon.org/pbe/game/assets/ux/traiticons/"
+    ],
+    "traits": [
+        {
+            "name": "Ascendant",
+            "nick": "ASCEND",
+            "sprite": [
+                null,
+                "trait_icon_12_ascendent.tft_set12.png"
+            ]
+        },
+        {
+            "name": "Bastion",
+            "nick": "BASTIO",
+            "sprite": [
+                "tft_set12_emblem_bastion.png",
+                "trait_icon_9_bastion.png"
+            ]
+        },
+        {
+            "name": "Bat Queen",
+            "nick": "BAT",
+            "sprite": [
+                null,
+                "trait_icon_12_batqueen.tft_set12.png"
+            ]
+        },
+        {
+            "name": "Blaster",
+            "nick": "BLASTR",
+            "sprite": [
+                null,
+                "trait_icon_12_artillerist.tft_set12.png"
+            ]
+        },
+        {
+            "name": "Best Friends",
+            "nick": "BF",
+            "sprite": [
+                null,
+                "trait_icon_12_explorer.tft_set12.png"
+            ]
+        },
+        {
+            "name": "Hunter",
+            "nick": "HUNTER",
+            "sprite": [
+                "tft_set12_emblem_hunter.png",
+                "trait_icon_12_hunter.tft_set12.png"
+            ]
+        },
+        {
+            "name": "Incantor",
+            "nick": "INCANT",
+            "sprite": [
+                "tft_set12_emblem_incantor.png",
+                "trait_icon_12_incantor.tft_set12.png"
+            ]
+        },
+        {
+            "name": "Mage",
+            "nick": "MAGE",
+            "sprite": [
+                "tft_set12_emblem_mage.png",
+                "trait_icon_12_mage.tft_set12.png"
+            ]
+        },
+        {
+            "name": "Multistriker",
+            "nick": "MULTIS",
+            "sprite": [
+                "tft_set12_emblem_multistriker.png",
+                "trait_icon_12_multistriker.tft_set12.png"
+            ]
+        },
+        {
+            "name": "Preserver",
+            "nick": "PRESER",
+            "sprite": [
+                "tft_set12_emblem_preserver.png",
+                "trait_icon_12_preserver.tft_set12.png"
+            ]
+        },
+        {
+            "name": "Scholar",
+            "nick": "SCHOLA",
+            "sprite": [
+                "tft_set12_emblem_scholar.png",
+                "trait_icon_6_scholar.png"
+            ]
+        },
+        {
+            "name": "Shapeshifter",
+            "nick": "SHAPES",
+            "sprite": [
+                "tft_set12_emblem_shapeshifter.png",
+                "trait_icon_shapeshifter.png"
+            ]
+        },
+        {
+            "name": "Vanguard",
+            "nick": "VANGRD",
+            "sprite": [
+                "tft_set12_emblem_vanguard.png",
+                "trait_icon_12_vanguard.tft_set12.png"
+            ]
+        },
+        {
+            "name": "Warrior",
+            "nick": "WAR",
+            "sprite": [
+                "tft_set12_emblem_warrior.png",
+                "trait_icon_12_warrior.tft_set12.png"
+            ]
+        },
+        {
+            "name": "Arcana",
+            "nick": "ARCANA",
+            "sprite": [
+                "tft_set12_emblem_arcana.png",
+                "trait_icon_12_arcana.tft_set12.png"
+            ]
+        },
+        {
+            "name": "Chrono",
+            "nick": "CHRONO",
+            "sprite": [
+                "tft_set12_emblem_chrono.png",
+                "trait_icon_12_time.tft_set12.png"
+            ]
+        },
+        {
+            "name": "Dragon",
+            "nick": "DRAGON",
+            "sprite": [
+                null,
+                "trait_icon_12_dragon.tft_set12.png"
+            ]
+        },
+        {
+            "name": "Druid",
+            "nick": "DRUID",
+            "sprite": [
+                null,
+                "trait_icon_12_druid.tft_set12.png"
+            ]
+        },
+        {
+            "name": "Eldritch",
+            "nick": "ELDRIT",
+            "sprite": [
+                "tft_set12_emblem_eldritch.png",
+                "trait_icon_12_eldritch.tft_set12.png"
+            ]
+        },
+        {
+            "name": "Faerie",
+            "nick": "FAERIE",
+            "sprite": [
+                "tft_set12_emblem_faerie.png",
+                "trait_icon_12_faerie.tft_set12.png"
+            ]
+        },
+        {
+            "name": "Frost",
+            "nick": "FROST",
+            "sprite": [
+                "tft_set12_emblem_frost.png",
+                "trait_icon_12_winter.tft_set12.png"
+            ]
+        },
+        {
+            "name": "Honeymancy",
+            "nick": "HONEY",
+            "sprite": [
+                "tft_set12_emblem_honeymancy.png",
+                "trait_icon_12_bee.tft_set12.png"
+            ]
+        },
+        {
+            "name": "Portal",
+            "nick": "PORTAL",
+            "sprite": [
+                "tft_set12_emblem_portal.png",
+                "trait_icon_12_portal.tft_set12.png"
+            ]
+        },
+        {
+            "name": "Pyro",
+            "nick": "PYRO",
+            "sprite": [
+                "tft_set12_emblem_pyro.png",
+                "trait_icon_12_pyrokinesis.tft_set12.png"
+            ]
+        },
+        {
+            "name": "Ravenous",
+            "nick": "RAVENO",
+            "sprite": [
+                null,
+                "trait_icon_12_ravenous.tft_set12.png"
+            ]
+        },
+        {
+            "name": "Relic",
+            "nick": "RELIC",
+            "sprite": [
+                null,
+                "trait_icon_sorcerer.png"
+            ]
+        },
+        {
+            "name": "Sugarcraft",
+            "nick": "SUGAR",
+            "sprite": [
+                "tft_set12_emblem_sugarcraft.png",
+                "trait_icon_12_sugarcraft.tft_set12.png"
+            ]
+        },
+        {
+            "name": "Witchcraft",
+            "nick": "WITCH",
+            "sprite": [
+                "tft_set12_emblem_witchcraft.png",
+                "trait_icon_12_witch.tft_set12.png"
+            ]
+        }
+    ],
+    "units": [
+        {
+            "name": "Ahri",
+            "nick": "AHRI",
+            "sprite": [
+                "tft12_ahri_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -29,
+                "y": -11
+            }
+        },
+        {
+            "name": "Akali",
+            "nick": "AKALI",
+            "sprite": [
+                "tft12_akali_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -29,
+                "y": -11
+            }
+        },
+        {
+            "name": "Ashe",
+            "nick": "ASHE",
+            "sprite": [
+                "tft12_ashe_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -38,
+                "y": -9
+            }
+        },
+        {
+            "name": "Bard",
+            "nick": "BARD",
+            "sprite": [
+                "tft12_bard_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -29,
+                "y": -11
+            }
+        },
+        {
+            "name": "Blitzcrank",
+            "nick": "BLITZ",
+            "sprite": [
+                "tft12_blitzcrank_small.tft_set12.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -40,
+                "y": -11
+            }
+        },
+        {
+            "name": "Briar",
+            "nick": "BRIAR",
+            "sprite": [
+                "tft12_briar_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -29,
+                "y": -14
+            }
+        },
+        {
+            "name": "Camille",
+            "nick": "CAMILL",
+            "sprite": [
+                "tft12_camille_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -34,
+                "y": -16
+            }
+        },
+        {
+            "name": "Cassiopeia",
+            "nick": "CASSIO",
+            "sprite": [
+                "tft12_cassiopeia_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -31,
+                "y": -11
+            }
+        },
+        {
+            "name": "Diana",
+            "nick": "DIANA",
+            "sprite": [
+                "tft12_diana_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -37,
+                "y": -8
+            }
+        },
+        {
+            "name": "Elise",
+            "nick": "ELISE",
+            "sprite": [
+                "tft12_elise_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -32,
+                "y": -11
+            }
+        },
+        {
+            "name": "Ezreal",
+            "nick": "EZREAL",
+            "sprite": [
+                "tft12_ezreal_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -33,
+                "y": -11
+            }
+        },
+        {
+            "name": "Fiora",
+            "nick": "FIORA",
+            "sprite": [
+                "tft12_fiora_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -35,
+                "y": -13
+            }
+        },
+        {
+            "name": "Galio",
+            "nick": "GALIO",
+            "sprite": [
+                "tft12_galio_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -33,
+                "y": -11
+            }
+        },
+        {
+            "name": "Gwen",
+            "nick": "GWEN",
+            "sprite": [
+                "tft12_gwen_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -36,
+                "y": -13
+            }
+        },
+        {
+            "name": "Hecarim",
+            "nick": "HECA",
+            "sprite": [
+                "tft12_hecarim_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -33,
+                "y": -8
+            }
+        },
+        {
+            "name": "Hwei",
+            "nick": "HWEI",
+            "sprite": [
+                "tft12_hwei_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -29,
+                "y": -14
+            }
+        },
+        {
+            "name": "Jax",
+            "nick": "JAX",
+            "sprite": [
+                "tft12_jax_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -27,
+                "y": -12
+            }
+        },
+        {
+            "name": "Jayce",
+            "nick": "JAYCE",
+            "sprite": [
+                "tft12_jayce_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -37,
+                "y": -11
+            }
+        },
+        {
+            "name": "Jinx",
+            "nick": "JINX",
+            "sprite": [
+                "tft12_jinx_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -33,
+                "y": -8
+            }
+        },
+        {
+            "name": "Kalista",
+            "nick": "KALIST",
+            "sprite": [
+                "tft12_kalista_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -39,
+                "y": -11
+            }
+        },
+        {
+            "name": "Karma",
+            "nick": "KARMA",
+            "sprite": [
+                "tft12_karma_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -35,
+                "y": -11
+            }
+        },
+        {
+            "name": "Kassadin",
+            "nick": "KASSA",
+            "sprite": [
+                "tft12_kassadin_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -35,
+                "y": -11
+            }
+        },
+        {
+            "name": "Katarina",
+            "nick": "KATA",
+            "sprite": [
+                "tft12_katarina_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -29,
+                "y": -11
+            }
+        },
+        {
+            "name": "Kog'Maw",
+            "nick": "KOGMAW",
+            "sprite": [
+                "tft12_kogmaw_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 150,
+                "y": 150
+            },
+            "offset": {
+                "x": -15,
+                "y": -3
+            }
+        },
+        {
+            "name": "Lillia",
+            "nick": "LILLIA",
+            "sprite": [
+                "tft12_lillia_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 300,
+                "y": 300
+            },
+            "offset": {
+                "x": -41,
+                "y": -14
+            }
+        },
+        {
+            "name": "Milio",
+            "nick": "MILIO",
+            "sprite": [
+                "tft12_milio_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -29,
+                "y": -11
+            }
+        },
+        {
+            "name": "Mordekaiser",
+            "nick": "MORDE",
+            "sprite": [
+                "tft12_mordekaiser_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -33,
+                "y": -14
+            }
+        },
+        {
+            "name": "Morgana",
+            "nick": "MORG",
+            "sprite": [
+                "tft12_morgana_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -38,
+                "y": -11
+            }
+        },
+        {
+            "name": "Nami",
+            "nick": "NAMI",
+            "sprite": [
+                "tft12_nami_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -37,
+                "y": -11
+            }
+        },
+        {
+            "name": "Nasus",
+            "nick": "NASUS",
+            "sprite": [
+                "tft12_nasus_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -33,
+                "y": -5
+            }
+        },
+        {
+            "name": "Neeko",
+            "nick": "NEEKO",
+            "sprite": [
+                "tft12_neeko_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -38,
+                "y": -16
+            }
+        },
+        {
+            "name": "Nilah",
+            "nick": "NILAH",
+            "sprite": [
+                "tft12_nilah_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -29,
+                "y": -7
+            }
+        },
+        {
+            "name": "Nomsy",
+            "nick": "NOMSY",
+            "sprite": [
+                "tft12_nomsy_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 150,
+                "y": 150
+            },
+            "offset": {
+                "x": -15,
+                "y": -3
+            }
+        },
+        {
+            "name": "Norra",
+            "nick": "NORRA",
+            "sprite": [
+                "tft12_norra_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -33,
+                "y": -11
+            }
+        },
+        {
+            "name": "Nunu",
+            "nick": "NUNU",
+            "sprite": [
+                "tft12_nunu_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 150,
+                "y": 150
+            },
+            "offset": {
+                "x": -14,
+                "y": -8
+            }
+        },
+        {
+            "name": "Olaf",
+            "nick": "OLAF",
+            "sprite": [
+                "tft12_olaf_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -29,
+                "y": -15
+            }
+        },
+        {
+            "name": "Poppy",
+            "nick": "POPPY",
+            "sprite": [
+                "tft12_poppy_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -29,
+                "y": -17
+            }
+        },
+        {
+            "name": "Rakan",
+            "nick": "RAKAN",
+            "sprite": [
+                "tft12_rakan_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -29,
+                "y": -11
+            }
+        },
+        {
+            "name": "Rumble",
+            "nick": "RUMBLE",
+            "sprite": [
+                "tft12_rumble_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -29,
+                "y": -11
+            }
+        },
+        {
+            "name": "Ryze",
+            "nick": "RYZE",
+            "sprite": [
+                "tft12_ryze_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -33,
+                "y": -5
+            }
+        },
+        {
+            "name": "Seraphine",
+            "nick": "SERAPH",
+            "sprite": [
+                "tft12_seraphine_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -35,
+                "y": -9
+            }
+        },
+        {
+            "name": "Shen",
+            "nick": "SHEN",
+            "sprite": [
+                "tft12_shen_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -29,
+                "y": -7
+            }
+        },
+        {
+            "name": "Shyvana",
+            "nick": "SHYV",
+            "sprite": [
+                "tft12_shyvana_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -35,
+                "y": -11
+            }
+        },
+        {
+            "name": "Smolder",
+            "nick": "SMOLDR",
+            "sprite": [
+                "tft12_smolder_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -33,
+                "y": -14
+            }
+        },
+        {
+            "name": "Soraka",
+            "nick": "SORAKA",
+            "sprite": [
+                "tft12_soraka_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -29,
+                "y": -11
+            }
+        },
+        {
+            "name": "Swain",
+            "nick": "SWAIN",
+            "sprite": [
+                "tft12_swain_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -33,
+                "y": -6
+            }
+        },
+        {
+            "name": "Syndra",
+            "nick": "SYNDRA",
+            "sprite": [
+                "tft12_syndra_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -37,
+                "y": -11
+            }
+        },
+        {
+            "name": "Tahm Kench",
+            "nick": "TAHM",
+            "sprite": [
+                "tft12_tahmkench_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -29,
+                "y": -11
+            }
+        },
+        {
+            "name": "Taric",
+            "nick": "TARIC",
+            "sprite": [
+                "tft12_taric_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -30,
+                "y": -6
+            }
+        },
+        {
+            "name": "Tristana",
+            "nick": "TRIST",
+            "sprite": [
+                "tft12_tristana_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -26,
+                "y": -19
+            }
+        },
+        {
+            "name": "Twitch",
+            "nick": "TWITCH",
+            "sprite": [
+                "tft12_twitch_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 200,
+                "y": 200
+            },
+            "offset": {
+                "x": -28,
+                "y": -19
+            }
+        },
+        {
+            "name": "Varus",
+            "nick": "VARUS",
+            "sprite": [
+                "tft12_varus_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -36,
+                "y": -11
+            }
+        },
+        {
+            "name": "Veigar",
+            "nick": "VEIGAR",
+            "sprite": [
+                "tft12_veigar_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 200,
+                "y": 200
+            },
+            "offset": {
+                "x": -22,
+                "y": -13
+            }
+        },
+        {
+            "name": "Vex",
+            "nick": "VEX",
+            "sprite": [
+                "tft12_vex_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -33,
+                "y": -20
+            }
+        },
+        {
+            "name": "Warwick",
+            "nick": "WARWIC",
+            "sprite": [
+                "tft12_warwick_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -37,
+                "y": -15
+            }
+        },
+        {
+            "name": "Wukong",
+            "nick": "WUKONG",
+            "sprite": [
+                "tft12_wukong_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -38,
+                "y": -15
+            }
+        },
+        {
+            "name": "Xerath",
+            "nick": "XERATH",
+            "sprite": [
+                "tft12_xerath_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -31,
+                "y": -7
+            }
+        },
+        {
+            "name": "Ziggs",
+            "nick": "ZIGGS",
+            "sprite": [
+                "tft12_ziggs_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 200,
+                "y": 200
+            },
+            "offset": {
+                "x": -22,
+                "y": -15
+            }
+        },
+        {
+            "name": "Zilean",
+            "nick": "ZILEAN",
+            "sprite": [
+                "tft12_zilean_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -37,
+                "y": -11
+            }
+        },
+        {
+            "name": "Zoe",
+            "nick": "ZOE",
+            "sprite": [
+                "tft12_zoe_teamplanner_splash.png"
+            ],
+            "scale": {
+                "x": 250,
+                "y": 250
+            },
+            "offset": {
+                "x": -29,
+                "y": -14
+            }
+        }
+    ]
+}

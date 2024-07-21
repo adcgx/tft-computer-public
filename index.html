@@ -1,0 +1,953 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>tft.computer</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+	</style>
+	<style>
+		body {
+			font-family: "Ubuntu Mono", monospace;
+			font-weight: 400;
+			color: gray;
+		}
+
+		.preview {
+			display: flex;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: separate;
+			/* Required for border-spacing to work */
+			border-spacing: 5px 5px;
+			/* Horizontal and vertical spacing */
+		}
+
+		.comp_preview_table {
+			width: 100%;
+			border-collapse: collapse;
+		}
+
+		.comp_preview_table tr td:last-child {
+			width: 100%;
+		}
+
+		td {
+			text-align: center;
+			padding: 0;
+		}
+
+		figure {
+			display: inline-block;
+			box-sizing: border-box;
+			user-select: none;
+			margin: 1px;
+		}
+
+		figcaption {
+			font-size: 10px;
+			font-family: "Ubuntu Mono", monospace;
+			font-style: normal;
+		}
+
+		.unit_five_cost figure {
+			border: 1px solid rgb(255, 255, 0);
+			box-shadow: 1px 1px 0px rgb(158, 84, 5);
+			color: rgb(158, 84, 5);
+			background-color: rgb(236, 233, 10);
+		}
+
+		.unit_four_cost figure {
+			border: 1px solid rgb(119, 0, 255);
+			box-shadow: 1px 1px 0px rgb(21, 2, 126);
+			color: rgb(199, 190, 247);
+			background-color: rgb(93, 0, 199);
+		}
+
+		.unit_three_cost figure {
+			border: 1px solid rgb(0, 100, 255);
+			box-shadow: 1px 1px 0px rgb(2, 66, 126);
+			color: rgb(137, 229, 241);
+			background-color: rgb(0, 80, 205);
+		}
+
+		.unit_two_cost figure {
+			border: 1px solid rgb(52, 212, 20);
+			box-shadow: 1px 1px 0px rgb(2, 126, 43);
+			color: rgb(3, 80, 29);
+			background-color: rgb(20, 212, 52);
+		}
+
+		.unit_one_cost figure {
+			border: 1px solid rgb(235, 214, 214);
+			box-shadow: 1px 1px 0px rgb(126, 2, 2);
+			color: rgb(126, 2, 2);
+			background-color: rgb(233, 218, 218);
+		}
+
+		.unit_dummy figure {
+			border: 1px dotted rgb(255, 255, 255);
+			box-shadow: 1px 1px 0px rgb(0, 0, 0);
+			color: rgb(255, 255, 255);
+			background-color: rgb(0, 0, 0);
+			filter: grayscale(100%) opacity(13%);
+		}
+
+		.traits_fig_container figure {
+			border: 1px solid rgb(20, 88, 37);
+			box-shadow: 1px 1px 0px rgb(30, 49, 35);
+			color: rgb(203, 233, 185);
+			background-color: rgb(20, 88, 37);
+		}
+
+		.hidden_figure {
+			visibility: hidden;
+			width: 0px;
+			margin: 0px;
+			border: 0px !important;
+			padding: 0px;
+		}
+
+		.selectable tr td figure {
+			cursor: pointer;
+		}
+
+		.unselectable {
+			cursor: default !important;
+			filter: grayscale(100%) opacity(30%);
+		}
+
+		.selected {
+			transform: translate(1px, 1px) !important;
+			border: 1px inset rgb(63, 63, 63) !important;
+			box-shadow: 0px 0px 0px transparent !important;
+			color: rgb(255, 255, 255) !important;
+			background-color: rgb(31, 31, 31) !important;
+		}
+
+		.portrait {
+			position: relative;
+			width: 32px;
+			height: 32px;
+			overflow: hidden;
+			margin-bottom: 1px;
+		}
+
+		.text-overlay {
+			position: absolute;
+			padding-top: 2px;
+			bottom: 0px;
+			width: 100%;
+			background-color: rgb(20, 88, 37, 0.6);
+			font-size: 9px;
+		}
+
+
+		.text_overlay_res {
+			position: absolute;
+			padding-top: 0px;
+			bottom: 0px;
+			width: 100%;
+			background-color: rgb(20, 88, 37, 0.8);
+			font-size: 12px;
+			font-weight: bold;
+		}
+
+		.dummy_portrait {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 32px;
+			height: 32px;
+			overflow: hidden;
+			border-bottom: 1px dotted rgb(255, 255, 255);
+			margin-bottom: 1px;
+			font-size: 22px;
+		}
+
+		.unit_fig_container {
+			display: flex;
+			flex-wrap: wrap-reverse;
+			justify-content: center;
+			flex-direction: row-reverse;
+		}
+
+		.comp_unit_fig_container {
+			display: flex;
+			flex-wrap: nowrap;
+			justify-content: left;
+			flex-direction: row-reverse;
+			overflow: hidden;
+		}
+	</style>
+</head>
+
+<body style="background:#333333">
+
+	<h1 style="text-align:center">TFT.COMPUTER</h1>
+	<hr style="border:0;border-bottom:1px dashed gray;margin:10px 0">
+
+	<div>
+		<table class="selectable" id="unit_table">
+			<tbody>
+				<tr id="unit_table_title_row">
+					<td class="unit_table_forced_units_column">
+						SELECT FORCED UNITS:
+					</td>
+					<td class="unit_table_removed_units_column">
+						SELECT BANNED UNITS:
+					</td>
+					<td class="unit_table_exalted_units_column">
+					</td>
+				</tr>
+				<tr id="unit_table_five_cost_row" class="unit_five_cost">
+					<td class="unit_table_forced_units_column">
+						<div class="unit_fig_container"></div>
+					</td>
+					<td class="unit_table_removed_units_column">
+						<div class="unit_fig_container"></div>
+					</td>
+					<td class="unit_table_exalted_units_column">
+						<div class="unit_fig_container"></div>
+					</td>
+				</tr>
+				<tr id="unit_table_four_cost_row" class="unit_four_cost">
+					<td class="unit_table_forced_units_column">
+						<div class="unit_fig_container"></div>
+					</td>
+					<td class="unit_table_removed_units_column">
+						<div class="unit_fig_container"></div>
+					</td>
+					<td class="unit_table_exalted_units_column">
+						<div class="unit_fig_container"></div>
+					</td>
+				</tr>
+				<tr id="unit_table_three_cost_row" class="unit_three_cost">
+					<td class="unit_table_forced_units_column">
+						<div class="unit_fig_container"></div>
+					</td>
+					<td class="unit_table_removed_units_column">
+						<div class="unit_fig_container"></div>
+					</td>
+					<td class="unit_table_exalted_units_column">
+						<div class="unit_fig_container"></div>
+					</td>
+				</tr>
+				<tr id="unit_table_two_cost_row" class="unit_two_cost">
+					<td class="unit_table_forced_units_column">
+						<div class="unit_fig_container"></div>
+					</td>
+					<td class="unit_table_removed_units_column">
+						<div class="unit_fig_container"></div>
+					</td>
+					<td class="unit_table_exalted_units_column">
+						<div class="unit_fig_container"></div>
+					</td>
+				</tr>
+				<tr id="unit_table_one_cost_row" class="unit_one_cost">
+					<td class="unit_table_forced_units_column">
+						<div class="unit_fig_container"></div>
+					</td>
+					<td class="unit_table_removed_units_column">
+						<div class="unit_fig_container"></div>
+					</td>
+					<td class="unit_table_exalted_units_column">
+						<div class="unit_fig_container"></div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div>
+		<table class="selectable" id="extra_traits_table">
+			<tbody>
+				<tr>
+					<td>
+						SELECT EXTRA TRAITS:
+					</td>
+				</tr>
+				<tr id="extra_traits_table_row">
+					<td class="extra_traits_table_column">
+						<div class="traits_fig_container"></div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div>
+		<label for="comp_size_range">COMP SIZE:</label>
+		<input type="range" id="comp_size_range" name="comp_size_range" min="5" max="12" value="9" />
+	</div>
+
+	<div class="preview">
+		<table class="comp_preview_table" id="comp_preview_table">
+			<tbody>
+				<tr id="comp_preview_table_row">
+					<td class="unit_five_cost">
+						<div class="comp_unit_fig_container"></div>
+					</td>
+					<td class="unit_four_cost">
+						<div class="comp_unit_fig_container"></div>
+					</td>
+					<td class="unit_three_cost">
+						<div class="comp_unit_fig_container"></div>
+					</td>
+					<td class="unit_two_cost">
+						<div class="comp_unit_fig_container"></div>
+					</td>
+					<td class="unit_one_cost">
+						<div class="comp_unit_fig_container"></div>
+					</td>
+					<td class="unit_dummy">
+						<div class="comp_unit_fig_container"></div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table class="trait_comp_preview_table" id="trait_comp_preview_table">
+			<tbody>
+				<tr id="trait_comp_preview_table_row">
+					<td class="trait_comp_preview_table_column">
+						<div class="traits_fig_container">
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div>
+		<label for="threads">THREADS: </label>
+		<input type="range" id="threads" name="threads" min="0" max="11" step="1" />
+		<button id="runbtn" button type="button" disabled>Run</button>
+	</div>
+
+	<div id="wa_log"><br></div>
+
+	<div id="results">
+	</div>
+
+	<script src="inc/wasm_utils.js"></script>
+	<script src="inc/game_utils.js"></script>
+	<script src="res/set12.js"></script>
+	<script type="text/javascript">
+		const parser_module_path = 'bin/parser.wasm';
+		const worker_module_path = 'bin/worker.wasm';
+		const worker_webworker_path = 'inc/worker.js';
+		const before_build_context_event = new Event('before_build_context');
+
+		let parser_module;
+
+		document.getElementById('threads').max = window.navigator.hardwareConcurrency - 1;
+		document.getElementById('threads').value = window.navigator.hardwareConcurrency - 2;
+		let thread_count = 1n;
+		let units_ui_forced = [];
+		let units_ui_removed = [];
+		let units_ui_comp_preview = [];
+		let units_ui_comp_preview_dummies = [];
+		let comp_size_ui = 0;
+		let units_ui_forced_selected_count = 0;
+		let traits_ui = [];
+		let traits_ui_comp_preview = [];
+		let traits_ui_selected_count = 0;
+		let results_table_row_count = 0;
+
+		function log(text) {
+			document.getElementById('wa_log').innerHTML += text.replace(/\n/g, "<br>");
+		};
+
+		function error(code, msg) {
+			document.getElementById('wa_log').innerHTML += '<div style="text-align:center;background-color:#FFF;color:#000;padding:1.5em;width:540px;margin:2em auto">' + {
+				BOOT: 'Error during startup. Your browser might not support WebAssembly. Please update it to the latest version.',
+				CRASH: 'The program crashed.',
+				MEM: 'The program ran out of memory.',
+			}[code] + '<br><br>(' + msg + ')</div>';
+		};
+
+		function abort(code, msg) {
+			error(code, msg);
+			throw 'abort';
+		}
+
+		function make_figure(ui_data_obj, img_src_url, sprite_idx = 0) {
+			// Create the figure element
+			let figure = document.createElement('figure');
+
+			// Create the div container for the image
+			let div = document.createElement('div');
+			div.className = 'portrait';
+
+			// Create the image element
+			let img = document.createElement('img');
+			img.src = `${img_src_url[sprite_idx]}${ui_data_obj.sprite[sprite_idx]}`;
+			img.alt = ui_data_obj.nick;  // Set alt attribute for accessibility
+			if (ui_data_obj.scale) {
+				img.style.width = `${ui_data_obj.scale.x}%`;
+				img.style.height = `${ui_data_obj.scale.y}%`;
+			} else {
+				img.style.width = '100%';
+			}
+			if (ui_data_obj.offset) {
+				img.style.transform = `translate(${ui_data_obj.offset.x}px, ${ui_data_obj.offset.y}px)`
+			}
+			// Append the image to the div
+			div.appendChild(img);
+
+			// Create the figcaption element
+			let figcaption = document.createElement('figcaption');
+			figcaption.textContent = ui_data_obj.nick;
+
+			// Append the div and figcaption to the figure
+			figure.appendChild(div);
+			figure.appendChild(figcaption);
+
+			// Return the complete figure element
+			return figure;
+		}
+
+		function make_unit_figure_dummy(caption) {
+			let figure = document.createElement('figure');
+			let div = document.createElement('div');
+			div.className = 'dummy_portrait';
+			div.innerHTML = '👻';
+			let figcaption = document.createElement('figcaption');
+			if (caption) {
+				figcaption.textContent = caption;
+			} else {
+				figcaption.textContent = 'OPEN';
+			}
+			figure.appendChild(div);
+			figure.appendChild(figcaption);
+
+			return figure;
+		}
+
+		function add_fig_to_table(table_id, row_id, column_class, container_class, ui_data_obj, img_src_url) {
+			let table = document.getElementById(table_id);
+			let row = table.querySelector(`#${row_id}`);
+			let column = row.querySelector(`.${column_class}`);
+			let container = column.querySelector(`.${container_class}`);
+			let figure = make_figure(ui_data_obj, img_src_url);
+			container.appendChild(figure);
+			return figure;
+		}
+
+		function onclick_unit_ui_forced(index) {
+			let unit_ui_forced = units_ui_forced[index];
+
+			if (unit_ui_forced.figure_element.classList.contains('unselectable'))
+				return;
+
+			if (unit_ui_forced.is_selected === true) {
+				unit_ui_forced.is_selected = false;
+				add_comp_preview_table_dummy();
+				--units_ui_forced_selected_count;
+			} else {
+				if (units_ui_forced_selected_count + 1 >= comp_size_ui)
+					return;
+
+				unit_ui_forced.is_selected = true;
+				remove_comp_preview_table_dummy();
+				++units_ui_forced_selected_count;
+			}
+
+			unit_ui_forced.figure_element.classList.toggle('selected');
+			units_ui_removed[index].figure_element.classList.toggle('unselectable');
+			units_ui_comp_preview[index].figure_element.classList.toggle('hidden_figure');
+		}
+
+		function onclick_unit_ui_removed(index) {
+			let unit_ui_removed = units_ui_removed[index];
+
+			if (unit_ui_removed.figure_element.classList.contains('unselectable'))
+				return;
+
+			if (unit_ui_removed.is_selected === true) {
+				unit_ui_removed.is_selected = false;
+			} else {
+				unit_ui_removed.is_selected = true;
+			}
+
+			unit_ui_removed.figure_element.classList.toggle('selected');
+			units_ui_forced[index].figure_element.classList.toggle('unselectable');
+			units_ui_exalted[index].figure_element.classList.toggle('unselectable'); //TODO: not here
+		}
+
+		function update_trait_ui_comp_preview(index) {
+			let trait_ui = traits_ui[index];
+			let trait_ui_comp_preview = traits_ui_comp_preview[index];
+
+			switch (trait_ui.selected_count) {
+				case 1: trait_ui_comp_preview.text_overlay_div.innerHTML = "◆◇◇"; break;
+				case 2: trait_ui_comp_preview.text_overlay_div.innerHTML = "◆◆◇"; break;
+				case 3: trait_ui_comp_preview.text_overlay_div.innerHTML = "◆◆◆"; break;
+			}
+		}
+
+		function onclick_trait_ui(index) {
+			let trait_ui = traits_ui[index];
+			let trait_ui_comp_preview = traits_ui_comp_preview[index];
+
+			if (trait_ui.selected_count < 3) {
+				++trait_ui.selected_count;
+
+				if (trait_ui.selected_count === 1) {
+					trait_ui_comp_preview.figure_element.classList.toggle('hidden_figure');
+				}
+
+				update_trait_ui_comp_preview(index);
+			}
+		}
+
+		function onclick_trait_ui_comp_preview(index) {
+			let trait_ui = traits_ui[index];
+			let trait_ui_comp_preview = traits_ui_comp_preview[index];
+			--trait_ui.selected_count;
+
+			if (trait_ui.selected_count === 0) {
+				trait_ui_comp_preview.figure_element.classList.toggle('hidden_figure');
+			} else {
+				update_trait_ui_comp_preview(index);
+			}
+		}
+
+		function add_comp_preview_table_dummy() {
+			let table = document.getElementById('comp_preview_table');
+			let row = table.querySelector('#comp_preview_table_row');
+			let column = row.querySelector('.unit_dummy');
+			let container = column.querySelector('.comp_unit_fig_container');
+			let figure = make_unit_figure_dummy();
+			container.appendChild(figure);
+		}
+
+		function remove_comp_preview_table_dummy() {
+			let table = document.getElementById('comp_preview_table');
+			let row = table.querySelector('#comp_preview_table_row');
+			let column = row.querySelector('.unit_dummy');
+			let container = column.querySelector('.comp_unit_fig_container');
+			container.removeChild(container.lastChild);
+		}
+
+		function onchange_comp_size_range(range_element) {
+			const new_comp_size_ui = parseInt(range_element.value, 10);
+
+			if (units_ui_forced_selected_count >= new_comp_size_ui) {
+				range_element.value = comp_size_ui;
+				return;
+			}
+
+			if (new_comp_size_ui > comp_size_ui) {
+				let delta = new_comp_size_ui - comp_size_ui;
+				for (let i = 0; i < delta; ++i) {
+					add_comp_preview_table_dummy();
+				}
+			} else if (new_comp_size_ui < comp_size_ui) {
+				let delta = comp_size_ui - new_comp_size_ui;
+				for (let i = 0; i < delta; ++i) {
+					remove_comp_preview_table_dummy();
+				}
+			} else {
+				return;
+			}
+
+			comp_size_ui = new_comp_size_ui;
+		}
+
+		function add_result_to_result_table(result) {
+			let outer_container = document.getElementById('results');
+
+			let container = document.createElement('div');
+			container.className = 'preview';
+			outer_container.appendChild(container);
+
+			// Units:
+			{
+				let table = document.createElement('table');
+				table.className = 'comp_preview_table';
+				table.id = 'results_units_table_' + results_table_row_count;
+				container.appendChild(table);
+
+				let new_result_row = table.insertRow();
+				new_result_row.id = 'results_table_row';
+
+				const new_units_container = new Array(5);
+				for (var i = 0; i < 5; ++i) {
+					let new_units_column = new_result_row.insertCell(0);
+					new_units_column.className = 'unit_' + cost_string(i + 1);
+					new_units_container[i] = document.createElement('div');
+					new_units_container[i].className = 'comp_unit_fig_container';
+					new_units_column.appendChild(new_units_container[i]);
+				}
+
+				//TODO: invert the order
+				result.units.forEach(result_unit_idx => {
+					let outer = document.createElement('div');
+					new_units_container[game_constants.units[result_unit_idx].cost - 1].appendChild(outer);
+					let figure = make_figure(ui_data.units[result_unit_idx], ui_data.units_sprite_url);
+					outer.appendChild(figure);
+				});
+			}
+
+			// Traits:
+			{
+				let table = document.createElement('table');
+				table.className = 'trait_comp_preview_table';
+				table.id = 'results_traits_table_' + results_table_row_count;
+				container.appendChild(table);
+
+				let new_result_row = table.insertRow();
+				new_result_row.id = 'results_table_row';
+
+				let new_traits_column = new_result_row.insertCell(0);
+				new_traits_column.className = 'trait_comp_preview_table_column';
+
+				let outer = document.createElement('div');
+				outer.className = 'traits_fig_container';
+
+				result.traits.forEach(result_trait => {
+					const trait_idx = result_trait.trait;
+					const trait_count = result_trait.count;
+					const trait_value = game_trait_from_index(trait_idx).value;
+					console.log(trait_value)
+					if (trait_value.length > 0 && trait_value[Math.min(trait_count - 1, trait_value.length - 1)] > 0) {
+						new_traits_column.appendChild(outer);
+						let figure = make_figure(ui_data.traits[result_trait.trait], ui_data.traits_sprite_url, 1);
+						outer.appendChild(figure);
+
+						let portrait_div = figure.firstChild;
+						let text_overlay = document.createElement('div');
+						text_overlay.className = 'text_overlay_res';
+						portrait_div.appendChild(text_overlay);
+
+						text_overlay.innerHTML = result_trait.count + '/' + trait_value.length;
+					}
+				});
+
+			}
+			++results_table_row_count;
+		}
+
+		function cost_string(cost) {
+			let cost_str;
+
+			switch (cost) {
+				case 1: cost_str = 'one_cost'; break;
+				case 2: cost_str = 'two_cost'; break;
+				case 3: cost_str = 'three_cost'; break;
+				case 4: cost_str = 'four_cost'; break;
+				case 5: cost_str = 'five_cost'; break;
+				default: throw new Error('Unit cost invalid!');
+			}
+
+			return cost_str;
+		}
+
+		function unit_cost_string(unit_index) {
+			return cost_string(game_constants.units[unit_index].cost);
+		}
+
+		function init_tables() {
+			if (game_constants && ui_data) {
+				// Fill out various unit tables...
+				for (let i = 0; i < game_constants.units.length; ++i) {
+					// Add them to the UI in reverse order for flex-box styling reasons
+					const reverse_index = game_constants.units.length - (i + 1);
+
+					let cost_str = unit_cost_string(reverse_index);
+					const unit_table_row_id = 'unit_table_' + cost_str + '_row';
+					const comp_preview_table_column_id = 'unit_' + cost_str;
+
+					// Populate forced unit table entries
+					let unit_figure_forced = add_fig_to_table(
+						'unit_table',
+						unit_table_row_id,
+						'unit_table_forced_units_column',
+						'unit_fig_container',
+						ui_data.units[reverse_index],
+						ui_data.units_sprite_url
+					);
+
+					unit_figure_forced.addEventListener("click", function () {
+						onclick_unit_ui_forced(i);
+					});
+
+					let unit_ui_forced = {
+						figure_element: unit_figure_forced,
+						game_index: reverse_index,
+						is_selected: false
+					}
+
+					units_ui_forced.push(unit_ui_forced);
+
+					// Populate removed unit table entries
+					let unit_figure_removed = add_fig_to_table(
+						'unit_table',
+						unit_table_row_id,
+						'unit_table_removed_units_column',
+						'unit_fig_container',
+						ui_data.units[reverse_index],
+						ui_data.units_sprite_url
+					);
+
+					unit_figure_removed.addEventListener("click", function () {
+						onclick_unit_ui_removed(i);
+					});
+
+					let unit_ui_removed = {
+						figure_element: unit_figure_removed,
+						game_index: reverse_index,
+						is_selected: false
+					}
+
+					units_ui_removed.push(unit_ui_removed);
+
+					// Populate preview table
+					let unit_figure_comp_preview = add_fig_to_table(
+						'comp_preview_table',
+						'comp_preview_table_row',
+						comp_preview_table_column_id,
+						'comp_unit_fig_container',
+						ui_data.units[reverse_index],
+						ui_data.units_sprite_url
+					);
+
+					// Set them to be hidden
+					unit_figure_comp_preview.classList.toggle('hidden_figure');
+
+					unit_figure_comp_preview.addEventListener("click", function () {
+						onclick_unit_ui_forced(i);
+					});
+
+					unit_ui_comp_preview = {
+						figure_element: unit_figure_comp_preview
+					}
+
+					units_ui_comp_preview.push(unit_ui_comp_preview);
+
+					document.dispatchEvent(new CustomEvent('on_init_tables_foreach_unit', {
+						detail: {
+							index: i,
+							reverse_index: reverse_index
+						}
+					})
+					);
+				}
+
+				// Fill out bonus trait table
+				for (let i = 0; i < game_constants.traits.length; ++i) {
+
+					// If there's no emblem sprite for this trait, ignore it
+					if (!ui_data.traits[i].sprite[0]) {
+						traits_ui.push(null);
+						traits_ui_comp_preview.push(null);
+						continue;
+					}
+
+					let trait_figure = add_fig_to_table(
+						'extra_traits_table',
+						'extra_traits_table_row',
+						'extra_traits_table_column',
+						'traits_fig_container',
+						ui_data.traits[i],
+						ui_data.traits_sprite_url);
+
+					let trait_figure_comp_preview = add_fig_to_table(
+						'trait_comp_preview_table',
+						'trait_comp_preview_table_row',
+						'trait_comp_preview_table_column',
+						'traits_fig_container',
+						ui_data.traits[i],
+						ui_data.traits_sprite_url);
+
+					trait_figure_comp_preview.classList.toggle('hidden_figure');
+
+					// Add text overlay div
+					let portrait_div = trait_figure_comp_preview.firstChild;
+					let text_overlay = document.createElement('div');
+					text_overlay.className = 'text-overlay';
+					portrait_div.appendChild(text_overlay);
+
+					trait_figure.addEventListener("click", function () {
+						onclick_trait_ui(i);
+					});
+
+					trait_figure_comp_preview.addEventListener("click", function () {
+						onclick_trait_ui_comp_preview(i);
+					});
+
+					let trait_ui = {
+						figure_element: trait_figure,
+						game_index: i,
+						selected_count: 0
+					}
+
+					trait_ui_comp_preview = {
+						figure_element: trait_figure_comp_preview,
+						text_overlay_div: text_overlay
+					}
+
+					traits_ui.push(trait_ui);
+					traits_ui_comp_preview.push(trait_ui_comp_preview);
+				}
+
+				let comp_size_range = document.getElementById('comp_size_range');
+
+				comp_size_range.addEventListener("input", function () {
+					onchange_comp_size_range(this);
+				});
+
+				onchange_comp_size_range(comp_size_range);
+			}
+		}
+
+		function parse_and_build_context() {
+			if (parser_module && game_constants) {
+				let forced_units = [];
+				let removed_units = [];
+				let trait_bonuses = [];
+
+				units_ui_forced.forEach(unit_ui_forced => {
+					if (unit_ui_forced.is_selected === true) {
+						forced_units.push(unit_ui_forced.game_index);
+					}
+				});
+
+				units_ui_removed.forEach(unit_ui_removed => {
+					if (unit_ui_removed.is_selected === true) {
+						removed_units.push(unit_ui_removed.game_index);
+					}
+				});
+
+				traits_ui.forEach(trait_ui => {
+					if (trait_ui && trait_ui.selected_count > 0) {
+						for (i = 0; i < trait_ui.selected_count; ++i)
+							trait_bonuses.push(trait_ui.game_index);
+					}
+				});
+
+				document.dispatchEvent(before_build_context_event);
+				return build_context(parser_module, comp_size_ui, forced_units, removed_units, trait_bonuses);
+			}
+		}
+
+		function try_enable_button() {
+			if (parser_module && game_constants) {
+				const run_button = document.getElementById('runbtn');
+				run_button.disabled = false;
+				run_button.onclick = function (_) {
+					const run_button = document.getElementById('runbtn');
+					run_button.disabled = true;
+					const combinations = parse_and_build_context();
+					thread_count = BigInt(document.getElementById('threads').value) + 1n;
+					const time_estimate = (2300n * combinations) / (14783142660n * thread_count);
+					log(`Evaluating ${combinations.toLocaleString()} comps. Estimated time: ~${time_estimate} secs...\n`);
+					spawn_workers_and_run();
+				}
+			}
+		}
+
+		function spawn_workers_and_run() {
+			load_module_and_compile(worker_module_path).then(worker_module => {
+
+				const subsets_memory = new Uint8Array(parser_module.exports.memory.buffer, parser_module.exports.get_subsets(), parser_module.exports.get_subsets_size());
+
+				let worker_list = [];
+
+				const first_worker = new Worker(worker_webworker_path);
+				worker_list.push(first_worker);
+
+				first_worker.onmessage = function (event) {
+					if (event.data) {
+						console.log(event.data);
+						console.log('Starting workers:', thread_count);
+
+						let results_count = event.data.results_count;
+
+						for (let i = 0n; i < thread_count - 1n; ++i) {
+							let new_worker = new Worker(worker_webworker_path);
+							worker_list.push(new_worker);
+							new_worker.postMessage({
+								type: 'init_mem',
+								data: {
+									compiled_module: worker_module,
+									memory_buffer: event.data.memory_buffer
+								}
+							});
+						}
+
+						let result_buffer = {
+							results_count,
+							min_value: 0,
+							results: new Array(results_count)
+						}
+
+						let start = performance.now();
+
+						let done_count = 0;
+
+						for (let i = 0n; i < BigInt(worker_list.length); ++i) {
+
+							worker_list[i].onmessage = function (event) {
+								++done_count;
+								event.data.results.forEach(result => {
+									add_result_to_buffer(result_buffer, result);
+								})
+								if (done_count >= thread_count) {
+									let end = performance.now();
+									log(`Complete! Execution time: ${(end - start) * 0.001} sec.`);
+									result_buffer.results.forEach(result => {
+										console.log(decode_worker_result(result.comp, result.value));
+										add_result_to_result_table(decode_worker_result(result.comp, result.value));
+									})
+								}
+							}
+
+							worker_list[i].postMessage({
+								type: 'run',
+								data: {
+									thread_idx: i,
+									thread_count
+								}
+							})
+						}
+					}
+				};
+
+				first_worker.postMessage({
+					type: 'init',
+					data: {
+						compiled_module: worker_module,
+						subsets_memory: subsets_memory,
+						subsets_count: parser_module.exports.get_subsets_count()
+					}
+				});
+			})
+		}
+
+		load_module_and_instantiate(parser_module_path).then(new_parser_module => {
+			parser_module = new_parser_module;
+			try_enable_button();
+		}).catch(error => {
+			console.error('Error loading parser module:', error);
+		});
+
+		load_data().then(() => {
+			console.log('Game constants loaded:', game_constants);
+			console.log('UI data loaded:', ui_data);
+			init_tables();
+			try_enable_button();
+		}).catch(error => {
+			console.error('Error loading game constants or UI data:', error);
+		});
+
+	</script>
+</body>
+
+</html>
