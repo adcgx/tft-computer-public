@@ -68,7 +68,7 @@
             "nick": "MAGE",
             "sprite": [
                 "tft_set12_emblem_mage.png",
-                "trait_icon_12_mage.tft_set12.png"
+                "trait_icon_2_mage.png"
             ]
         },
         {
@@ -76,7 +76,7 @@
             "nick": "MULTIS",
             "sprite": [
                 "tft_set12_emblem_multistriker.png",
-                "trait_icon_12_multistriker.tft_set12.png"
+                "trait_icon_12_weaponmaster.tft_set12.png"
             ]
         },
         {
