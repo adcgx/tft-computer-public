@@ -613,9 +613,10 @@
 
 				result.traits.forEach(result_trait => {
 					const trait_idx = result_trait.trait;
-					const trait_count = result_trait.count;
+					const extra_trait_count = traits_ui[trait_idx] != null ? traits_ui[trait_idx].selected_count : 0;
+					const trait_count = result_trait.count + extra_trait_count;
 					const trait_value = game_trait_from_index(trait_idx).value;
-					console.log(trait_value)
+
 					if (trait_value.length > 0 && trait_value[Math.min(trait_count - 1, trait_value.length - 1)] > 0) {
 						new_traits_column.appendChild(outer);
 						let figure = make_figure(ui_data.traits[result_trait.trait], ui_data.traits_sprite_url, 1);
@@ -626,7 +627,7 @@
 						text_overlay.className = 'text_overlay_res';
 						portrait_div.appendChild(text_overlay);
 
-						text_overlay.innerHTML = result_trait.count + '/' + trait_value.length;
+						text_overlay.innerHTML = trait_count + '/' + trait_value.length;
 					}
 				});
 
@@ -827,8 +828,7 @@
 
 				traits_ui.forEach(trait_ui => {
 					if (trait_ui && trait_ui.selected_count > 0) {
-						for (i = 0; i < trait_ui.selected_count; ++i)
-							trait_bonuses.push(trait_ui.game_index);
+						trait_bonuses.push({ trait_index: trait_ui.game_index, count: trait_ui.selected_count });
 					}
 				});
 
@@ -846,7 +846,7 @@
 					run_button.disabled = true;
 					const combinations = parse_and_build_context();
 					thread_count = BigInt(document.getElementById('threads').value) + 1n;
-					const time_estimate = (2300n * combinations) / (14783142660n * thread_count);
+					const time_estimate = (12100n * combinations) / (75394027566n * thread_count);
 					log(`Evaluating ${combinations.toLocaleString()} comps. Estimated time: ~${time_estimate} secs...\n`);
 					spawn_workers_and_run();
 				}
@@ -903,8 +903,8 @@
 									let end = performance.now();
 									log(`Complete! Execution time: ${(end - start) * 0.001} sec.`);
 									result_buffer.results.forEach(result => {
-										console.log(decode_worker_result(result.comp, result.value));
-										add_result_to_result_table(decode_worker_result(result.comp, result.value));
+										let decoded_result = decode_worker_result(result.comp, result.value);
+										add_result_to_result_table(decoded_result);
 									})
 								}
 							}
