@@ -35,7 +35,7 @@
             "name": "Blaster",
             "nick": "BLASTR",
             "sprite": [
-                null,
+                "tft_set12_emblem_artillerist.png",
                 "trait_icon_12_artillerist.tft_set12.png"
             ]
         },
