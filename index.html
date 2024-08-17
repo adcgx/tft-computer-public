@@ -12,33 +12,64 @@
 		body {
 			font-family: "Ubuntu Mono", monospace;
 			font-weight: 400;
-			color: gray;
+			font-size: 13px;
+			color: grey;
+			margin: 0px;
+			padding: 0px;
+			min-height: 100vh;
+			display: flex;
+			flex-direction: column;
+			background-color: #1b1b1b;
+			align-items: center;
+		}
+
+		header {
+			width: 100%;
+			text-align: center;
+			background: #272727;
+			padding: 4px;
+			box-sizing: border-box;
+		}
+
+		main {
+			display: flex;
+			flex-direction: column;
+			flex: 1;
+			flex-basis: content;
+			background: #272727;
+		}
+
+		footer {
+			width: 100%;
+			text-align: center;
+			background: #272727;
+			padding: 4px;
+			box-sizing: border-box;
+		}
+
+		a {
+			color: grey;
+			/* Default color */
+			text-decoration: none;
+			/* No underline by default */
+		}
+
+		a:visited {
+			color: grey;
+			/* Same color for visited links */
+		}
+
+		a:hover {
+			color: white;
+			/* Color on hover */
+			text-decoration: underline;
+			/* Underline on hover */
 		}
 
 		.preview {
 			display: flex;
-		}
-
-		table {
-			width: 100%;
-			border-collapse: separate;
-			/* Required for border-spacing to work */
-			border-spacing: 5px 5px;
-			/* Horizontal and vertical spacing */
-		}
-
-		.comp_preview_table {
-			width: 100%;
-			border-collapse: collapse;
-		}
-
-		.comp_preview_table tr td:last-child {
-			width: 100%;
-		}
-
-		td {
-			text-align: center;
-			padding: 0;
+			flex-direction: column;
+			flex-wrap: wrap;
 		}
 
 		figure {
@@ -52,6 +83,37 @@
 			font-size: 10px;
 			font-family: "Ubuntu Mono", monospace;
 			font-style: normal;
+			text-align: center;
+		}
+
+		.trait_table .trait_trow {
+			background-color: rgb(196, 196, 196);
+			padding: 3px;
+		}
+
+		.unit_table .unit_five_cost {
+			background-color: rgb(255, 255, 0);
+			padding: 3px 0px 0px 3px;
+		}
+
+		.unit_table .unit_four_cost {
+			background-color: rgb(119, 0, 255);
+			padding: 3px 0px 0px 3px;
+		}
+
+		.unit_table .unit_three_cost {
+			background-color: rgb(0, 100, 255);
+			padding: 3px 0px 0px 3px;
+		}
+
+		.unit_table .unit_two_cost {
+			background-color: rgb(52, 212, 20);
+			padding: 3px 0px 0px 3px;
+		}
+
+		.unit_table .unit_one_cost {
+			background-color: rgb(235, 214, 214);
+			padding: 3px 0px 0px 3px;
 		}
 
 		.unit_five_cost figure {
@@ -102,31 +164,21 @@
 			box-shadow: 1px 1px 0px rgb(30, 49, 35);
 			color: rgb(203, 233, 185);
 			background-color: rgb(20, 88, 37);
+			margin-right: 3px;
+			margin-bottom: 1px;
 		}
 
-		.hidden_figure {
-			visibility: hidden;
-			width: 0px;
-			margin: 0px;
-			border: 0px !important;
-			padding: 0px;
+		.hidden {
+			display: none;
 		}
 
-		.selectable tr td figure {
+		.selectable {
 			cursor: pointer;
 		}
 
-		.unselectable {
-			cursor: default !important;
-			filter: grayscale(100%) opacity(30%);
-		}
-
-		.selected {
-			transform: translate(1px, 1px) !important;
-			border: 1px inset rgb(63, 63, 63) !important;
-			box-shadow: 0px 0px 0px transparent !important;
-			color: rgb(255, 255, 255) !important;
-			background-color: rgb(31, 31, 31) !important;
+		.selectable:hover {
+			cursor: pointer;
+			border-color: rgb(255, 255, 255);
 		}
 
 		.portrait {
@@ -145,7 +197,6 @@
 			background-color: rgb(20, 88, 37, 0.6);
 			font-size: 9px;
 		}
-
 
 		.text_overlay_res {
 			position: absolute;
@@ -183,156 +234,1096 @@
 			flex-direction: row-reverse;
 			overflow: hidden;
 		}
+
+		.ttable {
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+		}
+
+		.trow {
+			display: flex;
+			justify-content: flex-start;
+			height: auto;
+			flex-wrap: wrap;
+		}
+
+		.unit_table {
+			width: 100%;
+		}
+
+		.unit_options_container {
+			display: flex;
+			color: rgb(192, 192, 192);
+			background-color: rgba(0, 0, 0, 0.7);
+			border: 1px solid rgb(0, 0, 0, 1);
+			box-shadow: 1px 1px 0px rgb(0, 0, 0);
+			border-width: 1px;
+			margin-bottom: 4px;
+			margin-right: 4px;
+			padding: 1px;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+
+		.unit_options_container_options {
+			max-height: 100%;
+			overflow: hidden;
+			display: flex;
+			flex-direction: column;
+			height: auto;
+			align-items: center;
+			justify-content: space-evenly;
+			font-size: 12px;
+			margin: 0px 2px 0px 2px;
+		}
+
+		.ui_unit_option_unselected {
+			cursor: pointer;
+			filter: opacity(70%);
+		}
+
+		.ui_unit_option_unselected:hover {
+			filter: opacity(100%);
+			color: white;
+		}
+
+		.ui_unit_option_selected {
+			cursor: pointer;
+			filter: opacity(100%);
+			color: white;
+		}
+
+		.unit_options_unit_forced {
+			border: 0px solid rgba(0, 0, 0, 0) !important;
+			padding: 1px;
+			color: rgb(0, 0, 0) !important;
+			box-shadow: 1px 1px 0px rgb(255, 255, 255) !important;
+			background-image: conic-gradient(from 60deg at 50% 100% in oklch,
+					oklch(100% 0.2 105) 0%,
+					oklch(100% 0 0) 24% 24%, 31%,
+					oklch(100% 0.20 0) 40%,
+					oklch(100% 0.16 260) 72% 72%, 75%,
+					oklch(66% 0.35 300) 77% 77%, 84%,
+					oklch(100% 0.2 105) 100%);
+			text-shadow: 1px 1px 0px rgb(255, 255, 255);
+		}
+
+		.unit_options_unit_banned {
+			filter: opacity(50%) grayscale(100%)
+		}
+
+		.unit_options_container_traits_preview {
+			max-height: 100%;
+			max-width: 16px;
+			overflow: hidden;
+			display: flex;
+			flex: 0 1 16px;
+			align-items: center;
+			justify-content: center;
+			padding-top: 1px;
+			margin-right: 1px;
+		}
+
+		.unit_options_container_traits_preview img {
+			max-width: 100%;
+			max-height: 100%;
+			height: auto;
+			width: auto;
+			margin-top: -1px;
+			overflow: hidden;
+			filter: opacity(60%);
+		}
+
+		input[type=range] {
+			-webkit-appearance: none;
+			appearance: none;
+			background: transparent;
+			cursor: pointer;
+			width: 100px;
+			margin: 0px 10px;
+			padding: 0px;
+		}
+
+		input[type="range"]::-webkit-slider-runnable-track {
+			background: #1b1b1b;
+			box-shadow: 1px 1px 0px rgb(14, 14, 14);
+			height: 10px;
+		}
+
+		input[type="range"]::-moz-range-track {
+			background: #1b1b1b;
+			box-shadow: 1px 1px 0px rgb(14, 14, 14);
+			height: 10px;
+		}
+
+		input[type="range"]::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			appearance: none;
+			background-color: #858585;
+			height: 10px;
+			width: 8px;
+			border: 1px solid rgb(156, 156, 156);
+			box-shadow: 1px 1px 0px rgb(71, 71, 71);
+		}
+
+		input[type="range"]::-moz-range-thumb {
+			border-radius: 0;
+			appearance: none;
+			background-color: #858585;
+			height: 10px;
+			width: 8px;
+			border: 1px solid rgb(156, 156, 156);
+			box-shadow: 1px 1px 0px rgb(71, 71, 71);
+		}
+
+		input[type="range"]::-webkit-slider-thumb:hover {
+			border-color: white;
+		}
+
+		input[type="range"]::-moz-range-thumb:hover {
+			border-color: white;
+		}
+
+		.range_container {
+			display: flex;
+			align-items: center;
+			white-space: nowrap;
+		}
+
+		canvas {
+			background-color: #1b1b1b;
+			font-smooth: none;
+			-webkit-font-smoothing: none;
+		}
+
+		button {
+			background-color: #858585;
+			border: none;
+			color: rgb(255, 255, 255);
+			padding: 2px 16px;
+			margin: 1px 10px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			cursor: pointer;
+			border: 1px solid rgb(156, 156, 156);
+			box-shadow: 1px 1px 0px rgb(26, 26, 26);
+			font-family: "Ubuntu Mono", monospace;
+			font-weight: 400;
+			font-size: 13px;
+		}
+
+		button:hover {
+			border: 1px solid rgb(255, 255, 255);
+		}
+
+		button:active {
+			border: 1px solid rgb(255, 255, 255);
+			transform: translate(1px, 1px);
+			box-shadow: none;
+		}
+
+		button:disabled {
+			opacity: 0.6;
+			cursor: progress;
+			box-shadow: none;
+		}
+
+		button:disabled:hover {
+			border: 1px solid rgb(156, 156, 156);
+		}
+
+		button:disabled:active {
+			border: 1px solid rgb(156, 156, 156);
+			transform: translate(0px, 0px);
+		}
+
+		.comp_table {
+			display: table;
+			width: max-content;
+		}
+
+		.result_table {
+			display: flex;
+			width: max-content;
+			align-items: center;
+			padding: 6px;
+		}
+
+		.comp_table_units {
+			display: flex;
+		}
+
+		.comp_table_traits {
+			display: table-caption;
+			caption-side: bottom;
+		}
+
+		.comp_table_column_traits {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+
+		.comp_table_column_traits figure {
+			color: white;
+			background-color: rgba(0, 0, 0, 0.25);
+			border: 1px solid rgb(0, 0, 0, 0.5);
+			box-shadow: 1px 1px 0px rgb(0, 0, 0, 0.5);
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+
+		.comp_table_column_traits figcaption {
+			font-size: 11px;
+		}
+
+		.comp_table_traits_figure_obj {
+			width: 24px;
+			height: 24px;
+			margin: 0px;
+			padding: 0px;
+			background-image:
+				linear-gradient(0deg in oklab,
+					oklch(67% 0.01 263) 0%, oklch(93% 0.01 236) 37% 37%, oklch(99% 0.02 262) 42% 42%, oklch(94% 0.00 48) 100%);
+			mask-repeat: no-repeat;
+			mask-size: 100%;
+		}
+
+		.comp_table_traits_figure_obj--gold {
+			background-image:
+				linear-gradient(0deg in oklab,
+					oklch(100% 0.2 104) 0%, oklch(92% 0.11 92) 26% 26%, oklch(100% 0.04 104) 29% 29%, oklch(97% 0.17 84) 49% 49%);
+		}
+
+		.comp_table_traits_figure_obj--prismatic {
+			background-image: conic-gradient(from 60deg at 50% 50% in oklch,
+					oklch(100% 0.2 105) 0%,
+					oklch(100% 0 0) 24% 24%, 31%,
+					oklch(100% 0.20 0) 40%,
+					oklch(100% 0.16 260) 72% 72%, 75%,
+					oklch(66% 0.35 300) 77% 77%, 84%,
+					oklch(100% 0.2 105) 100%);
+		}
+
+		.inner_main {
+			display: flex;
+			justify-content: space-between;
+			height: 100%;
+			width: 100%;
+			flex-grow: 1;
+			flex-wrap: wrap;
+			flex-direction: row;
+			background-color: #1b1b1b;
+		}
+
+		.inner_main .left {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: flex-start;
+			padding: 80px;
+			box-sizing: border-box;
+		}
+
+		.inner_main .right {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			box-sizing: border-box;
+			padding: 80px;
+		}
+
+		.inner_main .left .preview_container .preview_container_header {
+			border: 1px solid #272727;
+			padding: 1px 0px 1px 0px;
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		.inner_main .left .preview_container .preview_container_main {
+			padding: 12px 35px;
+			background-color: #272727;
+		}
+
+		.inner_main .right .results_container .results_container_header {
+			border: 1px solid #272727;
+			padding: 1px 0px 1px 0px;
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		.inner_main .right .results_container .results_container_main {
+			padding: 12px 35px;
+			background-color: #272727;
+			box-sizing: border-box;
+			min-width: 460px;
+		}
+
+		.search_bar {
+			display: flex;
+			justify-content: center;
+			margin: 1px;
+		}
+
+		.progress_container {
+			margin: 0px;
+			padding: 0px;
+			background-color: #1b1b1b;
+		}
 	</style>
 </head>
 
-<body style="background:#333333">
+<body>
 
-	<h1 style="text-align:center">TFT.COMPUTER</h1>
-	<hr style="border:0;border-bottom:1px dashed gray;margin:10px 0">
+	<header>
+		<a href="">TFT.COMPUTER</a> - <a href="https://github.com/adcgx/tft-computer-public">GITHUB</a>
+	</header>
 
-	<div>
-		<table class="selectable" id="unit_table">
-			<tbody>
-				<tr id="unit_table_title_row">
-					<td class="unit_table_forced_units_column">
-						SELECT FORCED UNITS:
-					</td>
-					<td class="unit_table_removed_units_column">
-						SELECT BANNED UNITS:
-					</td>
-					<td class="unit_table_exalted_units_column">
-					</td>
-				</tr>
-				<tr id="unit_table_five_cost_row" class="unit_five_cost">
-					<td class="unit_table_forced_units_column">
-						<div class="unit_fig_container"></div>
-					</td>
-					<td class="unit_table_removed_units_column">
-						<div class="unit_fig_container"></div>
-					</td>
-					<td class="unit_table_exalted_units_column">
-						<div class="unit_fig_container"></div>
-					</td>
-				</tr>
-				<tr id="unit_table_four_cost_row" class="unit_four_cost">
-					<td class="unit_table_forced_units_column">
-						<div class="unit_fig_container"></div>
-					</td>
-					<td class="unit_table_removed_units_column">
-						<div class="unit_fig_container"></div>
-					</td>
-					<td class="unit_table_exalted_units_column">
-						<div class="unit_fig_container"></div>
-					</td>
-				</tr>
-				<tr id="unit_table_three_cost_row" class="unit_three_cost">
-					<td class="unit_table_forced_units_column">
-						<div class="unit_fig_container"></div>
-					</td>
-					<td class="unit_table_removed_units_column">
-						<div class="unit_fig_container"></div>
-					</td>
-					<td class="unit_table_exalted_units_column">
-						<div class="unit_fig_container"></div>
-					</td>
-				</tr>
-				<tr id="unit_table_two_cost_row" class="unit_two_cost">
-					<td class="unit_table_forced_units_column">
-						<div class="unit_fig_container"></div>
-					</td>
-					<td class="unit_table_removed_units_column">
-						<div class="unit_fig_container"></div>
-					</td>
-					<td class="unit_table_exalted_units_column">
-						<div class="unit_fig_container"></div>
-					</td>
-				</tr>
-				<tr id="unit_table_one_cost_row" class="unit_one_cost">
-					<td class="unit_table_forced_units_column">
-						<div class="unit_fig_container"></div>
-					</td>
-					<td class="unit_table_removed_units_column">
-						<div class="unit_fig_container"></div>
-					</td>
-					<td class="unit_table_exalted_units_column">
-						<div class="unit_fig_container"></div>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+	<main>
 
-	<div>
-		<table class="selectable" id="extra_traits_table">
-			<tbody>
-				<tr>
-					<td>
-						SELECT EXTRA TRAITS:
-					</td>
-				</tr>
-				<tr id="extra_traits_table_row">
-					<td class="extra_traits_table_column">
-						<div class="traits_fig_container"></div>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+		<div class="inner_main">
 
-	<div>
-		<label for="comp_size_range">COMP SIZE:</label>
-		<input type="range" id="comp_size_range" name="comp_size_range" min="5" max="12" value="9" />
-	</div>
+			<div class="left">
 
-	<div class="preview">
-		<table class="comp_preview_table" id="comp_preview_table">
-			<tbody>
-				<tr id="comp_preview_table_row">
-					<td class="unit_five_cost">
-						<div class="comp_unit_fig_container"></div>
-					</td>
-					<td class="unit_four_cost">
-						<div class="comp_unit_fig_container"></div>
-					</td>
-					<td class="unit_three_cost">
-						<div class="comp_unit_fig_container"></div>
-					</td>
-					<td class="unit_two_cost">
-						<div class="comp_unit_fig_container"></div>
-					</td>
-					<td class="unit_one_cost">
-						<div class="comp_unit_fig_container"></div>
-					</td>
-					<td class="unit_dummy">
-						<div class="comp_unit_fig_container"></div>
-					</td>
-				</tr>
-			</tbody>
-		</table>
+				<div class="preview_container">
 
-		<table class="trait_comp_preview_table" id="trait_comp_preview_table">
-			<tbody>
-				<tr id="trait_comp_preview_table_row">
-					<td class="trait_comp_preview_table_column">
-						<div class="traits_fig_container">
+					<div class="preview_container_header">
+						&nbsp;-- COMP PREVIEW
+					</div>
+
+					<div class="preview_container_main">
+
+						<div class="range_container">
+							<label for="comp_size_range">COMP SIZE:&nbsp;</label>
+							<input style="width:200px; margin:4px" type="range" id="comp_size_range"
+								name="comp_size_range" min="5" max="12" value="9" />&nbsp;
+							<div id="comp_size_range_value">09</div>
 						</div>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
 
-	<div>
-		<label for="threads">THREADS: </label>
-		<input type="range" id="threads" name="threads" min="0" max="11" step="1" />
-		<button id="runbtn" button type="button" disabled>Run</button>
-	</div>
+						<div id="preview">
+							<div class="comp_table">
+								<div class="comp_table_units">
+									<div class="trow unit_five_cost" name="comp_table_units_column_five_cost">
+									</div>
+									<div class="trow unit_four_cost" name="comp_table_units_column_four_cost">
+									</div>
+									<div class="trow unit_three_cost" name="comp_table_units_column_three_cost">
+									</div>
+									<div class="trow unit_two_cost" name="comp_table_units_column_two_cost">
+									</div>
+									<div class="trow unit_one_cost" name="comp_table_units_column_one_cost">
+									</div>
+									<div class="trow unit_dummy" name="comp_table_units_column_dummy">
+									</div>
+								</div>
+								<div class="comp_table_traits">
+									<div class="comp_table_column_traits" name="comp_table_traits_column">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 
-	<div id="wa_log"><br></div>
+				</div>
 
-	<div id="results">
-	</div>
+				<div id="wa_log">
+					Welcome!</br>
+					Select UNITS you wish to ADD or BAN.</br>
+					Select any extra EMBLEMS you wish to ADD.</br>
+					When ready, press SEARCH below.</br>
+				</div>
+			</div>
+
+			<div class="right">
+				<div class="results_container">
+					<div class="results_container_header">&nbsp;-- RESULTS</div>
+					<div class="results_container_main">
+						<div id="results_0" class="hidden">
+							<div class="result_table">
+								<div class="comp_table_units">
+									<div class="trow unit_five_cost" name="comp_table_units_column_five_cost">
+									</div>
+									<div class="trow unit_four_cost" name="comp_table_units_column_four_cost">
+									</div>
+									<div class="trow unit_three_cost" name="comp_table_units_column_three_cost">
+									</div>
+									<div class="trow unit_two_cost" name="comp_table_units_column_two_cost">
+									</div>
+									<div class="trow unit_one_cost" name="comp_table_units_column_one_cost">
+									</div>
+								</div>
+								&nbsp;=&nbsp;
+								<div class="comp_table_traits">
+									<div class="comp_table_column_traits" name="comp_table_traits_column">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div id="results_1" class="hidden">
+							<div class="result_table">
+								<div class="comp_table_units">
+									<div class="trow unit_five_cost" name="comp_table_units_column_five_cost">
+									</div>
+									<div class="trow unit_four_cost" name="comp_table_units_column_four_cost">
+									</div>
+									<div class="trow unit_three_cost" name="comp_table_units_column_three_cost">
+									</div>
+									<div class="trow unit_two_cost" name="comp_table_units_column_two_cost">
+									</div>
+									<div class="trow unit_one_cost" name="comp_table_units_column_one_cost">
+									</div>
+								</div>
+								&nbsp;=&nbsp;
+								<div class="comp_table_traits">
+									<div class="comp_table_column_traits" name="comp_table_traits_column">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div id="results_2" class="hidden">
+							<div class="result_table">
+								<div class="comp_table_units">
+									<div class="trow unit_five_cost" name="comp_table_units_column_five_cost">
+									</div>
+									<div class="trow unit_four_cost" name="comp_table_units_column_four_cost">
+									</div>
+									<div class="trow unit_three_cost" name="comp_table_units_column_three_cost">
+									</div>
+									<div class="trow unit_two_cost" name="comp_table_units_column_two_cost">
+									</div>
+									<div class="trow unit_one_cost" name="comp_table_units_column_one_cost">
+									</div>
+								</div>
+								&nbsp;=&nbsp;
+								<div class="comp_table_traits">
+									<div class="comp_table_column_traits" name="comp_table_traits_column">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div id="results_3" class="hidden">
+							<div class="result_table">
+								<div class="comp_table_units">
+									<div class="trow unit_five_cost" name="comp_table_units_column_five_cost">
+									</div>
+									<div class="trow unit_four_cost" name="comp_table_units_column_four_cost">
+									</div>
+									<div class="trow unit_three_cost" name="comp_table_units_column_three_cost">
+									</div>
+									<div class="trow unit_two_cost" name="comp_table_units_column_two_cost">
+									</div>
+									<div class="trow unit_one_cost" name="comp_table_units_column_one_cost">
+									</div>
+								</div>
+								&nbsp;=&nbsp;
+								<div class="comp_table_traits">
+									<div class="comp_table_column_traits" name="comp_table_traits_column">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div id="results_4" class="hidden">
+							<div class="result_table">
+								<div class="comp_table_units">
+									<div class="trow unit_five_cost" name="comp_table_units_column_five_cost">
+									</div>
+									<div class="trow unit_four_cost" name="comp_table_units_column_four_cost">
+									</div>
+									<div class="trow unit_three_cost" name="comp_table_units_column_three_cost">
+									</div>
+									<div class="trow unit_two_cost" name="comp_table_units_column_two_cost">
+									</div>
+									<div class="trow unit_one_cost" name="comp_table_units_column_one_cost">
+									</div>
+								</div>
+								&nbsp;=&nbsp;
+								<div class="comp_table_traits">
+									<div class="comp_table_column_traits" name="comp_table_traits_column">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div id="results_5" class="hidden">
+							<div class="result_table">
+								<div class="comp_table_units">
+									<div class="trow unit_five_cost" name="comp_table_units_column_five_cost">
+									</div>
+									<div class="trow unit_four_cost" name="comp_table_units_column_four_cost">
+									</div>
+									<div class="trow unit_three_cost" name="comp_table_units_column_three_cost">
+									</div>
+									<div class="trow unit_two_cost" name="comp_table_units_column_two_cost">
+									</div>
+									<div class="trow unit_one_cost" name="comp_table_units_column_one_cost">
+									</div>
+								</div>
+								&nbsp;=&nbsp;
+								<div class="comp_table_traits">
+									<div class="comp_table_column_traits" name="comp_table_traits_column">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div id="results_6" class="hidden">
+							<div class="result_table">
+								<div class="comp_table_units">
+									<div class="trow unit_five_cost" name="comp_table_units_column_five_cost">
+									</div>
+									<div class="trow unit_four_cost" name="comp_table_units_column_four_cost">
+									</div>
+									<div class="trow unit_three_cost" name="comp_table_units_column_three_cost">
+									</div>
+									<div class="trow unit_two_cost" name="comp_table_units_column_two_cost">
+									</div>
+									<div class="trow unit_one_cost" name="comp_table_units_column_one_cost">
+									</div>
+								</div>
+								&nbsp;=&nbsp;
+								<div class="comp_table_traits">
+									<div class="comp_table_column_traits" name="comp_table_traits_column">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div id="results_7" class="hidden">
+							<div class="result_table">
+								<div class="comp_table_units">
+									<div class="trow unit_five_cost" name="comp_table_units_column_five_cost">
+									</div>
+									<div class="trow unit_four_cost" name="comp_table_units_column_four_cost">
+									</div>
+									<div class="trow unit_three_cost" name="comp_table_units_column_three_cost">
+									</div>
+									<div class="trow unit_two_cost" name="comp_table_units_column_two_cost">
+									</div>
+									<div class="trow unit_one_cost" name="comp_table_units_column_one_cost">
+									</div>
+								</div>
+								&nbsp;=&nbsp;
+								<div class="comp_table_traits">
+									<div class="comp_table_column_traits" name="comp_table_traits_column">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div id="results_8" class="hidden">
+							<div class="result_table">
+								<div class="comp_table_units">
+									<div class="trow unit_five_cost" name="comp_table_units_column_five_cost">
+									</div>
+									<div class="trow unit_four_cost" name="comp_table_units_column_four_cost">
+									</div>
+									<div class="trow unit_three_cost" name="comp_table_units_column_three_cost">
+									</div>
+									<div class="trow unit_two_cost" name="comp_table_units_column_two_cost">
+									</div>
+									<div class="trow unit_one_cost" name="comp_table_units_column_one_cost">
+									</div>
+								</div>
+								&nbsp;=&nbsp;
+								<div class="comp_table_traits">
+									<div class="comp_table_column_traits" name="comp_table_traits_column">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div id="results_9" class="hidden">
+							<div class="result_table">
+								<div class="comp_table_units">
+									<div class="trow unit_five_cost" name="comp_table_units_column_five_cost">
+									</div>
+									<div class="trow unit_four_cost" name="comp_table_units_column_four_cost">
+									</div>
+									<div class="trow unit_three_cost" name="comp_table_units_column_three_cost">
+									</div>
+									<div class="trow unit_two_cost" name="comp_table_units_column_two_cost">
+									</div>
+									<div class="trow unit_one_cost" name="comp_table_units_column_one_cost">
+									</div>
+								</div>
+								&nbsp;=&nbsp;
+								<div class="comp_table_traits">
+									<div class="comp_table_column_traits" name="comp_table_traits_column">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="progress_container" class="progress_container">
+			<canvas id="progress_canvas" height="14" width="100"></canvas>
+		</div>
+
+		<div class="search_bar">
+			<div class="range_container">
+				<label for="threads_range">THREADS:</label>
+				<input type="range" id="threads_range" name="threads_range" min="0" max="11" step="1" />
+				<div id="threads_range_value">01</div>
+			</div>
+
+			<div>
+				<button id="runbtn" button type="button" disabled>SEARCH</button>
+			</div>
+		</div>
+
+		<div style="background-color: #1b1b1b; padding:3px 0px; overflow:hidden">
+			&nbsp;-- ADD TRAIT EMBLEMS
+		</div>
+
+		<div class="ttable trait_table" id="trait_table">
+			<div class="trow trait_trow traits_fig_container" id="trait_table_column">
+			</div>
+		</div>
+
+		<div style="background-color: #1b1b1b; padding:3px 0px; overflow:hidden">
+			&nbsp;-- ADD / BAN UNITS
+		</div>
+
+		<div class="ttable">
+			<div class="ttable unit_table" id="unit_table">
+				<div class="trow unit_five_cost" id="unit_table_column_five_cost">
+				</div>
+				<div class="trow unit_four_cost" id="unit_table_column_four_cost">
+				</div>
+				<div class="trow unit_three_cost" id="unit_table_column_three_cost">
+				</div>
+				<div class="trow unit_two_cost" id="unit_table_column_two_cost">
+				</div>
+				<div class="trow unit_one_cost" id="unit_table_column_one_cost">
+				</div>
+			</div>
+		</div>
+
+		<script>
+			function style_ui_unit_clear(unit_idx) {
+				ui_unit_elm = ui_unit_elements[unit_idx];
+				ui_unit_elm.figure_elm.className = 'selectable';
+
+				let div_forced = ui_unit_elm.options_elm.querySelector('#forced');
+				let div_banned = ui_unit_elm.options_elm.querySelector('#banned');
+				div_forced.className = 'ui_unit_option_unselected';
+				div_forced.innerHTML = '> ADD';
+
+				div_banned.className = 'ui_unit_option_unselected';
+				div_banned.innerHTML = '> BAN';
+
+			}
+
+			function style_ui_unit_forced(unit_idx) {
+				ui_unit_elm = ui_unit_elements[unit_idx];
+				ui_unit_elm.figure_elm.className = 'unit_options_unit_forced';
+				ui_unit_elm.figure_elm.classList.add('selectable');
+
+				let div_forced = ui_unit_elm.options_elm.querySelector('#forced');
+				let div_banned = ui_unit_elm.options_elm.querySelector('#banned');
+				div_forced.className = 'ui_unit_option_selected';
+				div_forced.innerHTML = '->ADD';
+
+				div_banned.className = 'ui_unit_option_unselected';
+				div_banned.innerHTML = '> BAN';
+			}
+
+			function style_ui_unit_banned(unit_idx) {
+				ui_unit_elm = ui_unit_elements[unit_idx];
+				ui_unit_elm.figure_elm.className = 'unit_options_unit_banned';
+				ui_unit_elm.figure_elm.classList.add('selectable');
+
+				let div_forced = ui_unit_elm.options_elm.querySelector('#forced');
+				let div_banned = ui_unit_elm.options_elm.querySelector('#banned');
+				div_forced.className = 'ui_unit_option_unselected';
+				div_forced.innerHTML = '> ADD';
+
+				div_banned.className = 'ui_unit_option_selected';
+				div_banned.innerHTML = '->BAN';
+			}
+
+			function comp_table_util_get_unit(table_id, unit_idx) {
+				const comp_table = document.getElementById(table_id);
+				return comp_table.querySelectorAll(`[name="${'comp_table_unit_' + unit_idx}"]`)[0];
+			}
+
+			function comp_table_util_get_trait(table_id, trait_idx) {
+				const comp_table = document.getElementById(table_id);
+				return comp_table.querySelectorAll(`[name="${'comp_table_trait_' + trait_idx}"]`)[0];
+			}
+
+			function toggle_comp_table_unit(table_id, unit_idx) {
+				comp_table_util_get_unit(table_id, unit_idx).classList.toggle('hidden');
+			}
+
+			function get_comp_table_trait_value(table_id, trait_idx) {
+				const ui_comp_trait = comp_table_util_get_trait(table_id, trait_idx);
+
+				if (ui_comp_trait)
+					return parseInt(ui_comp_trait.getAttribute('value'), 10);
+
+				return 0;
+			}
+
+			function set_comp_table_trait_value(table_id, trait_idx, value) {
+				value = Math.min(9, Math.max(0, value));
+				const ui_comp_trait = comp_table_util_get_trait(table_id, trait_idx);
+				const old_value = parseInt(ui_comp_trait.getAttribute('value'), 10);
+
+				if (old_value == value)
+					return;
+
+				if (old_value == 0 || value == 0) {
+					ui_comp_trait.classList.toggle('hidden');
+				}
+
+				const fig_caption_elm = ui_comp_trait.getElementsByTagName('figcaption')[0];
+				fig_caption_elm.innerText = value + 'X';
+				ui_comp_trait.setAttribute('value', value);
+			}
+
+			function deselect_ui_unit_forced(unit_idx) {
+				const unit_bitflag = 1n << BigInt(unit_idx);
+				const is_selected = (ui_unit_forced_flag & unit_bitflag) != 0;
+
+				if (!is_selected)
+					return;
+
+				ui_unit_forced_flag &= ~(unit_bitflag);
+				style_ui_unit_clear(unit_idx);
+				add_comp_preview_table_dummy();
+				toggle_comp_table_unit('preview', unit_idx);
+			}
+
+			function select_ui_unit_forced(unit_idx) {
+				const unit_bitflag = 1n << BigInt(unit_idx);
+				const is_selected = (ui_unit_forced_flag & unit_bitflag) != 0;
+
+				if (is_selected)
+					return;
+
+				if (popcount(ui_unit_forced_flag) + 1 >= comp_size_ui)
+					return;
+
+				ui_unit_forced_flag |= unit_bitflag;
+				ui_unit_banned_flag &= ~(unit_bitflag);
+				style_ui_unit_forced(unit_idx);
+				remove_comp_preview_table_dummy();
+				toggle_comp_table_unit('preview', unit_idx);
+			}
+
+			function toggle_ui_unit_forced(unit_idx) {
+				const unit_bitflag = 1n << BigInt(unit_idx);
+				const is_selected = (ui_unit_forced_flag & unit_bitflag) != 0;
+
+				if (is_selected) {
+					deselect_ui_unit_forced(unit_idx);
+				} else {
+					select_ui_unit_forced(unit_idx);
+				}
+			}
+
+			function toggle_ui_unit_banned(unit_idx) {
+				const unit_bitflag = 1n << BigInt(unit_idx);
+				const is_banned = (ui_unit_banned_flag & unit_bitflag) != 0;
+
+				if (is_banned) {
+					ui_unit_banned_flag &= ~(unit_bitflag);
+					style_ui_unit_clear(unit_idx);
+					return;
+				}
+				deselect_ui_unit_forced(unit_idx);
+				ui_unit_banned_flag |= unit_bitflag;
+				style_ui_unit_banned(unit_idx);
+			}
+
+			function on_click_unit_figure(unit_idx) {
+				if (is_ui_unit_banned(unit_idx) || is_ui_unit_forced(unit_idx)) {
+					toggle_ui_unit_banned(unit_idx);
+				} else {
+					toggle_ui_unit_forced(unit_idx)
+				}
+			}
+
+			function on_click_trait_figure(trait_idx) {
+				const trait_value = get_comp_table_trait_value('preview', trait_idx);
+				set_comp_table_trait_value('preview', trait_idx, trait_value + 1);
+			}
+
+			function make_unit_options_row(unit_idx) {
+				let div = document.createElement('div');
+				div.classList.add('trow');
+				div.classList.add('unit_options_container_options');
+
+				let div_forced = document.createElement('div');
+				div_forced.className = 'ui_unit_option_unselected';
+				div_forced.innerHTML = '> ADD';
+				div_forced.id = 'forced';
+				div_forced.addEventListener("click", function () {
+					toggle_ui_unit_forced(unit_idx);
+				});
+
+				let div_banned = document.createElement('div');
+				div_banned.className = 'ui_unit_option_unselected';
+				div_banned.innerHTML = '> BAN';
+				div_banned.id = 'banned';
+				div_banned.addEventListener("click", function () {
+					toggle_ui_unit_banned(unit_idx);
+				});
+
+				div.appendChild(div_forced);
+				div.appendChild(div_banned);
+
+				return div;
+			}
+
+			function make_unit_traits_row(game_unit) {
+				let div = document.createElement('div');
+				div.classList.add('trow');
+				div.classList.add('unit_options_container_traits_preview');
+
+				game_unit.traits.forEach(trait_idx => {
+					let img = document.createElement('img');
+					const ui_data_obj = ui_data.traits[trait_idx];
+					const img_src_url = ui_data.traits_sprite_url;
+					img.src = `${img_src_url[1]}${ui_data_obj.sprite[1]}`;
+					img.alt = ui_data_obj.nick;
+					div.appendChild(img);
+				});
+
+				return div;
+			}
+
+			let ui_unit_elements = [64]; // TODO: we don't need this, access via id
+			let ui_unit_forced_flag = 0n;
+			let ui_unit_banned_flag = 0n;
+
+			function is_ui_unit_forced(unit_idx) {
+				return ((1n << BigInt(unit_idx)) & ui_unit_forced_flag) > 0n;
+			}
+
+			function is_ui_unit_banned(unit_idx) {
+				return ((1n << BigInt(unit_idx)) & ui_unit_banned_flag) > 0n;
+			}
+
+			function populate_comp_table_unit(unit_idx) {
+				const cost_str = unit_cost_string(unit_idx);
+				const unit_table_column_name = 'comp_table_units_column_' + cost_str;
+				const game_unit = game_unit_from_index(unit_idx);
+				const ui_unit = ui_data.units[unit_idx];
+				const unit_sprite_url = ui_data.units_sprite_url;
+
+				document.getElementsByName(unit_table_column_name).forEach(unit_table_column => {
+					const unit_figure = make_figure(ui_unit, unit_sprite_url);
+
+					const unit_container = document.createElement('div');
+					unit_container.classList.add('tcell');
+					// Set them to be hidden
+					unit_container.classList.toggle('hidden');
+					unit_container.setAttribute('name', 'comp_table_unit_' + unit_idx);
+
+					unit_container.appendChild(unit_figure);
+					unit_table_column.appendChild(unit_container);
+				});
+
+				const unit_preview = comp_table_util_get_unit('preview', unit_idx);
+				unit_preview.getElementsByTagName('figure')[0].classList.add('selectable');
+				unit_preview.addEventListener("click", function () {
+					toggle_ui_unit_forced(unit_idx);
+				});
+			}
+
+			function populate_comp_table_trait(trait_idx) {
+				const comp_table_traits_column_name = 'comp_table_traits_column';
+				const game_trait = game_trait_from_index(trait_idx);
+				const ui_trait = ui_data.traits[trait_idx];
+				const ui_trait_sprite_url = ui_data.traits_sprite_url;
+				const ui_trait_sprite_img_path = `${ui_trait_sprite_url[1]}${ui_trait.sprite[1]}`;
+
+				document.getElementsByName(comp_table_traits_column_name).forEach(comp_table_traits_column => {
+					const trait_container = document.createElement('div');
+					trait_container.classList.add('tcell');
+					trait_container.classList.toggle('hidden');
+					trait_container.setAttribute('name', "comp_table_trait_" + trait_idx);
+					trait_container.setAttribute('value', 0);
+					//trait_container.setAttribute('min', 0);
+					//trait_container.setAttribute('max', 0);
+
+					const trait_figure = document.createElement('figure');
+
+					const trait_figure_caption = document.createElement('figcaption');
+					trait_figure_caption.innerText = '0'
+
+					const trait_figure_obj = document.createElement('div');
+					trait_figure_obj.classList.add('portrait');
+					trait_figure_obj.classList.add('comp_table_traits_figure_obj');
+					trait_figure_obj.style = `mask-image: url(${ui_trait_sprite_img_path})`;
+
+					trait_figure.appendChild(trait_figure_caption);
+					trait_figure.appendChild(trait_figure_obj);
+					trait_container.appendChild(trait_figure);
+					comp_table_traits_column.appendChild(trait_container);
+				});
+
+				const trait_preview = comp_table_util_get_trait('preview', trait_idx);
+				trait_preview.getElementsByTagName('figure')[0].classList.add('selectable');
+				trait_preview.addEventListener("click", function () {
+					const trait_value = get_comp_table_trait_value('preview', trait_idx);
+					set_comp_table_trait_value('preview', trait_idx, trait_value - 1);
+				});
+			}
+
+			function new_unit_cell(unit_idx) {
+				const cost_str = unit_cost_string(unit_idx);
+				const unit_table_column_id = 'unit_table_column_' + cost_str;
+				const game_unit = game_unit_from_index(unit_idx);
+				const ui_unit = ui_data.units[unit_idx];
+				const unit_sprite_url = ui_data.units_sprite_url;
+				const unit_figure = make_figure(ui_unit, unit_sprite_url);
+				unit_figure.classList.add('selectable');
+				const unit_traits_row = make_unit_traits_row(game_unit);
+				const unit_options_row = make_unit_options_row(unit_idx);
+
+				let unit_table_column = document.getElementById(unit_table_column_id);
+				let unit_container = document.createElement('div');
+				unit_container.classList.add('tcell');
+				unit_container.classList.add('unit_options_container');
+
+				unit_container.appendChild(unit_traits_row);
+				unit_container.appendChild(unit_figure);
+				unit_container.appendChild(unit_options_row);
+
+				unit_figure.addEventListener("click", function () {
+					on_click_unit_figure(unit_idx);
+				});
+
+				unit_table_column.appendChild(unit_container);
+
+				ui_unit_elements[unit_idx] = { figure_elm: unit_figure, traits_elm: unit_traits_row, options_elm: unit_options_row };
+
+				populate_comp_table_unit(unit_idx);
+			}
+
+			function new_trait_cell(trait_idx) {
+				const game_trait = game_trait_from_index(trait_idx);
+				const ui_trait = ui_data.traits[trait_idx];
+				const traits_sprite_url = ui_data.traits_sprite_url;
+
+				// Check if an emblem sprite exists...
+				if (ui_trait.sprite[0]) {
+					const trait_figure = make_figure(ui_trait, traits_sprite_url);
+					trait_figure.classList.add('selectable');
+
+					trait_figure.addEventListener("click", function () {
+						on_click_trait_figure(trait_idx);
+					});
+
+					let trait_table_column = document.getElementById('trait_table_column');
+					let trait_container = document.createElement('div');
+					trait_container.classList.add('tcell');
+					trait_container.appendChild(trait_figure);
+					trait_table_column.appendChild(trait_container);
+				}
+
+				populate_comp_table_trait(trait_idx);
+			}
+
+			let ticker_interval_id;
+			let bar_inc_interval_id;
+
+			function start_progress_bar_animation(time_estimate) {
+				const canvas = document.getElementById('progress_canvas');
+				const ctx = canvas.getContext('2d');
+				var con = document.getElementById("progress_container"),
+					width = con.offsetWidth;
+
+				canvas.width = width;
+
+				// Set font properties
+				ctx.font = '14px "Ubuntu Mono", monospace';
+				ctx.fillStyle = 'grey';
+				ctx.textAlign = 'center';
+				ctx.textBaseline = 'top';
+				const frames = ['|', '/', '-', '\\'];
+				let frameIndex = 0;
+				const fps = 10; // Frames per seconds
+				const interval = 1000 / fps;
+				const char_width = 7;
+				const max_bar_length = Math.floor(canvas.width / char_width - 3);
+				const bar_inc_interval = (Number(time_estimate) * 1000) / max_bar_length;
+				let bar_iter = 0;
+				let block_bar = '';
+				let space_bar = ' '.repeat(max_bar_length);
+
+				function increment_bar_length() {
+					if (bar_iter < max_bar_length) {
+						block_bar += '-';
+						space_bar = space_bar.slice(0, -1);
+						++bar_iter;
+					} else {
+						clearInterval(bar_inc_interval_id);
+					}
+				}
+
+				function animate() {
+					// Clear the canvas
+					ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+					// Draw the current frame
+					const text = '[' + block_bar + frames[frameIndex] + space_bar + ']';
+					ctx.fillText(text, canvas.width / 2, 0);
+
+					// Update the frame index
+					frameIndex = (frameIndex + 1) % frames.length;
+				}
+
+				ticker_interval_id = setInterval(animate, interval);
+				bar_inc_interval_id = setInterval(increment_bar_length, bar_inc_interval);
+			}
+
+			function end_progress_bar_animation() {
+				if (ticker_interval_id)
+					clearInterval(ticker_interval_id);
+
+				if (bar_inc_interval_id)
+					clearInterval(bar_inc_interval_id);
+
+				const canvas = document.getElementById('progress_canvas');
+				const ctx = canvas.getContext('2d');
+				// Set font properties
+				ctx.font = '14px "Ubuntu Mono", monospace';
+				ctx.fillStyle = 'grey';
+				ctx.textAlign = 'center';
+				ctx.textBaseline = 'top';
+				const char_width = 7;
+				const max_bar_length = Math.floor(canvas.width / char_width - 3);
+
+				// Draw the final frame
+				const text = '[' + '-'.repeat(max_bar_length + 1) + ']';
+				ctx.clearRect(0, 0, canvas.width, canvas.height);
+				ctx.fillText(text, canvas.width / 2, 0);
+			}
+
+		</script>
+	</main>
+
+	<footer>
+		v0.9d SET 12 - <a
+			href="https://github.com/adcgx/tft-computer-public/tree/main?tab=License-1-ov-file#readme">LICENSE</a>
+	</footer>
 
 	<script src="inc/wasm_utils.js"></script>
 	<script src="inc/game_utils.js"></script>
@@ -345,19 +1336,10 @@
 
 		let parser_module;
 
-		document.getElementById('threads').max = window.navigator.hardwareConcurrency - 1;
-		document.getElementById('threads').value = window.navigator.hardwareConcurrency - 2;
+		document.getElementById('threads_range').max = window.navigator.hardwareConcurrency - 1;
+		document.getElementById('threads_range').value = Math.max(0, window.navigator.hardwareConcurrency - 2);
 		let thread_count = 1n;
-		let units_ui_forced = [];
-		let units_ui_removed = [];
-		let units_ui_comp_preview = [];
-		let units_ui_comp_preview_dummies = [];
 		let comp_size_ui = 0;
-		let units_ui_forced_selected_count = 0;
-		let traits_ui = [];
-		let traits_ui_comp_preview = [];
-		let traits_ui_selected_count = 0;
-		let results_table_row_count = 0;
 
 		function log(text) {
 			document.getElementById('wa_log').innerHTML += text.replace(/\n/g, "<br>");
@@ -429,116 +1411,32 @@
 			return figure;
 		}
 
-		function add_fig_to_table(table_id, row_id, column_class, container_class, ui_data_obj, img_src_url) {
-			let table = document.getElementById(table_id);
-			let row = table.querySelector(`#${row_id}`);
-			let column = row.querySelector(`.${column_class}`);
-			let container = column.querySelector(`.${container_class}`);
-			let figure = make_figure(ui_data_obj, img_src_url);
-			container.appendChild(figure);
-			return figure;
-		}
-
-		function onclick_unit_ui_forced(index) {
-			let unit_ui_forced = units_ui_forced[index];
-
-			if (unit_ui_forced.figure_element.classList.contains('unselectable'))
-				return;
-
-			if (unit_ui_forced.is_selected === true) {
-				unit_ui_forced.is_selected = false;
-				add_comp_preview_table_dummy();
-				--units_ui_forced_selected_count;
-			} else {
-				if (units_ui_forced_selected_count + 1 >= comp_size_ui)
-					return;
-
-				unit_ui_forced.is_selected = true;
-				remove_comp_preview_table_dummy();
-				++units_ui_forced_selected_count;
-			}
-
-			unit_ui_forced.figure_element.classList.toggle('selected');
-			units_ui_removed[index].figure_element.classList.toggle('unselectable');
-			units_ui_comp_preview[index].figure_element.classList.toggle('hidden_figure');
-		}
-
-		function onclick_unit_ui_removed(index) {
-			let unit_ui_removed = units_ui_removed[index];
-
-			if (unit_ui_removed.figure_element.classList.contains('unselectable'))
-				return;
-
-			if (unit_ui_removed.is_selected === true) {
-				unit_ui_removed.is_selected = false;
-			} else {
-				unit_ui_removed.is_selected = true;
-			}
-
-			unit_ui_removed.figure_element.classList.toggle('selected');
-			units_ui_forced[index].figure_element.classList.toggle('unselectable');
-			units_ui_exalted[index].figure_element.classList.toggle('unselectable'); //TODO: not here
-		}
-
-		function update_trait_ui_comp_preview(index) {
-			let trait_ui = traits_ui[index];
-			let trait_ui_comp_preview = traits_ui_comp_preview[index];
-
-			switch (trait_ui.selected_count) {
-				case 1: trait_ui_comp_preview.text_overlay_div.innerHTML = "◆◇◇"; break;
-				case 2: trait_ui_comp_preview.text_overlay_div.innerHTML = "◆◆◇"; break;
-				case 3: trait_ui_comp_preview.text_overlay_div.innerHTML = "◆◆◆"; break;
-			}
-		}
-
-		function onclick_trait_ui(index) {
-			let trait_ui = traits_ui[index];
-			let trait_ui_comp_preview = traits_ui_comp_preview[index];
-
-			if (trait_ui.selected_count < 3) {
-				++trait_ui.selected_count;
-
-				if (trait_ui.selected_count === 1) {
-					trait_ui_comp_preview.figure_element.classList.toggle('hidden_figure');
-				}
-
-				update_trait_ui_comp_preview(index);
-			}
-		}
-
-		function onclick_trait_ui_comp_preview(index) {
-			let trait_ui = traits_ui[index];
-			let trait_ui_comp_preview = traits_ui_comp_preview[index];
-			--trait_ui.selected_count;
-
-			if (trait_ui.selected_count === 0) {
-				trait_ui_comp_preview.figure_element.classList.toggle('hidden_figure');
-			} else {
-				update_trait_ui_comp_preview(index);
-			}
-		}
-
 		function add_comp_preview_table_dummy() {
-			let table = document.getElementById('comp_preview_table');
-			let row = table.querySelector('#comp_preview_table_row');
-			let column = row.querySelector('.unit_dummy');
-			let container = column.querySelector('.comp_unit_fig_container');
-			let figure = make_unit_figure_dummy();
-			container.appendChild(figure);
+			document.getElementsByName('comp_table_units_column_dummy').forEach(comp_table_dummy_column => {
+				let figure = make_unit_figure_dummy();
+				comp_table_dummy_column.appendChild(figure);
+			});
 		}
 
 		function remove_comp_preview_table_dummy() {
-			let table = document.getElementById('comp_preview_table');
-			let row = table.querySelector('#comp_preview_table_row');
-			let column = row.querySelector('.unit_dummy');
-			let container = column.querySelector('.comp_unit_fig_container');
-			container.removeChild(container.lastChild);
+			document.getElementsByName('comp_table_units_column_dummy').forEach(comp_table_dummy_column => {
+				comp_table_dummy_column.removeChild(comp_table_dummy_column.lastChild);
+			});
+		}
+
+		function popcount(n) {
+			let cnt = 0;
+			while (n) {
+				n &= n - 1n;
+				++cnt;
+			}
+			return cnt;
 		}
 
 		function onchange_comp_size_range(range_element) {
 			const new_comp_size_ui = parseInt(range_element.value, 10);
 
-			if (units_ui_forced_selected_count >= new_comp_size_ui) {
+			if (popcount(ui_unit_forced_flag) >= new_comp_size_ui) {
 				range_element.value = comp_size_ui;
 				return;
 			}
@@ -558,81 +1456,41 @@
 			}
 
 			comp_size_ui = new_comp_size_ui;
+			document.getElementById('comp_size_range_value').innerHTML = range_element.value.length > 1 ? new_comp_size_ui : '0' + new_comp_size_ui;
 		}
 
-		function add_result_to_result_table(result) {
-			let outer_container = document.getElementById('results');
+		function onchange_threads_range(range_element) {
+			const new_threads_range = parseInt(range_element.value, 10) + 1;
+			document.getElementById('threads_range_value').innerHTML = new_threads_range.length > 1 ? new_threads_range : '0' + new_threads_range;
+		}
 
-			let container = document.createElement('div');
-			container.className = 'preview';
-			outer_container.appendChild(container);
+		function add_result_to_result_table(result, index) {
+			const table_id = 'results_' + index;
 
 			// Units:
 			{
-				let table = document.createElement('table');
-				table.className = 'comp_preview_table';
-				table.id = 'results_units_table_' + results_table_row_count;
-				container.appendChild(table);
-
-				let new_result_row = table.insertRow();
-				new_result_row.id = 'results_table_row';
-
-				const new_units_container = new Array(5);
-				for (var i = 0; i < 5; ++i) {
-					let new_units_column = new_result_row.insertCell(0);
-					new_units_column.className = 'unit_' + cost_string(i + 1);
-					new_units_container[i] = document.createElement('div');
-					new_units_container[i].className = 'comp_unit_fig_container';
-					new_units_column.appendChild(new_units_container[i]);
-				}
-
-				//TODO: invert the order
 				result.units.forEach(result_unit_idx => {
-					let outer = document.createElement('div');
-					new_units_container[game_constants.units[result_unit_idx].cost - 1].appendChild(outer);
-					let figure = make_figure(ui_data.units[result_unit_idx], ui_data.units_sprite_url);
-					outer.appendChild(figure);
+					toggle_comp_table_unit(table_id, result_unit_idx);
 				});
 			}
 
 			// Traits:
 			{
-				let table = document.createElement('table');
-				table.className = 'trait_comp_preview_table';
-				table.id = 'results_traits_table_' + results_table_row_count;
-				container.appendChild(table);
-
-				let new_result_row = table.insertRow();
-				new_result_row.id = 'results_table_row';
-
-				let new_traits_column = new_result_row.insertCell(0);
-				new_traits_column.className = 'trait_comp_preview_table_column';
-
-				let outer = document.createElement('div');
-				outer.className = 'traits_fig_container';
-
+				console.log(table_id);
 				result.traits.forEach(result_trait => {
 					const trait_idx = result_trait.trait;
-					const extra_trait_count = traits_ui[trait_idx] != null ? traits_ui[trait_idx].selected_count : 0;
+					const extra_trait_count = get_comp_table_trait_value('preview', trait_idx);
 					const trait_count = result_trait.count + extra_trait_count;
 					const trait_value = game_trait_from_index(trait_idx).value;
 
 					if (trait_value.length > 0 && trait_value[Math.min(trait_count - 1, trait_value.length - 1)] > 0) {
-						new_traits_column.appendChild(outer);
-						let figure = make_figure(ui_data.traits[result_trait.trait], ui_data.traits_sprite_url, 1);
-						outer.appendChild(figure);
-
-						let portrait_div = figure.firstChild;
-						let text_overlay = document.createElement('div');
-						text_overlay.className = 'text_overlay_res';
-						portrait_div.appendChild(text_overlay);
-
-						text_overlay.innerHTML = trait_count + '/' + trait_value.length;
+						console.log(game_trait_from_index(trait_idx));
+						set_comp_table_trait_value(table_id, trait_idx, trait_count);
 					}
 				});
-
 			}
-			++results_table_row_count;
+
+			document.getElementById(table_id).classList.toggle('hidden');
 		}
 
 		function cost_string(cost) {
@@ -658,146 +1516,15 @@
 			if (game_constants && ui_data) {
 				// Fill out various unit tables...
 				for (let i = 0; i < game_constants.units.length; ++i) {
-					// Add them to the UI in reverse order for flex-box styling reasons
-					const reverse_index = game_constants.units.length - (i + 1);
-
-					let cost_str = unit_cost_string(reverse_index);
-					const unit_table_row_id = 'unit_table_' + cost_str + '_row';
-					const comp_preview_table_column_id = 'unit_' + cost_str;
-
-					// Populate forced unit table entries
-					let unit_figure_forced = add_fig_to_table(
-						'unit_table',
-						unit_table_row_id,
-						'unit_table_forced_units_column',
-						'unit_fig_container',
-						ui_data.units[reverse_index],
-						ui_data.units_sprite_url
-					);
-
-					unit_figure_forced.addEventListener("click", function () {
-						onclick_unit_ui_forced(i);
-					});
-
-					let unit_ui_forced = {
-						figure_element: unit_figure_forced,
-						game_index: reverse_index,
-						is_selected: false
-					}
-
-					units_ui_forced.push(unit_ui_forced);
-
-					// Populate removed unit table entries
-					let unit_figure_removed = add_fig_to_table(
-						'unit_table',
-						unit_table_row_id,
-						'unit_table_removed_units_column',
-						'unit_fig_container',
-						ui_data.units[reverse_index],
-						ui_data.units_sprite_url
-					);
-
-					unit_figure_removed.addEventListener("click", function () {
-						onclick_unit_ui_removed(i);
-					});
-
-					let unit_ui_removed = {
-						figure_element: unit_figure_removed,
-						game_index: reverse_index,
-						is_selected: false
-					}
-
-					units_ui_removed.push(unit_ui_removed);
-
-					// Populate preview table
-					let unit_figure_comp_preview = add_fig_to_table(
-						'comp_preview_table',
-						'comp_preview_table_row',
-						comp_preview_table_column_id,
-						'comp_unit_fig_container',
-						ui_data.units[reverse_index],
-						ui_data.units_sprite_url
-					);
-
-					// Set them to be hidden
-					unit_figure_comp_preview.classList.toggle('hidden_figure');
-
-					unit_figure_comp_preview.addEventListener("click", function () {
-						onclick_unit_ui_forced(i);
-					});
-
-					unit_ui_comp_preview = {
-						figure_element: unit_figure_comp_preview
-					}
-
-					units_ui_comp_preview.push(unit_ui_comp_preview);
-
-					document.dispatchEvent(new CustomEvent('on_init_tables_foreach_unit', {
-						detail: {
-							index: i,
-							reverse_index: reverse_index
-						}
-					})
-					);
+					new_unit_cell(i);
 				}
 
 				// Fill out bonus trait table
 				for (let i = 0; i < game_constants.traits.length; ++i) {
-
-					// If there's no emblem sprite for this trait, ignore it
-					if (!ui_data.traits[i].sprite[0]) {
-						traits_ui.push(null);
-						traits_ui_comp_preview.push(null);
-						continue;
-					}
-
-					let trait_figure = add_fig_to_table(
-						'extra_traits_table',
-						'extra_traits_table_row',
-						'extra_traits_table_column',
-						'traits_fig_container',
-						ui_data.traits[i],
-						ui_data.traits_sprite_url);
-
-					let trait_figure_comp_preview = add_fig_to_table(
-						'trait_comp_preview_table',
-						'trait_comp_preview_table_row',
-						'trait_comp_preview_table_column',
-						'traits_fig_container',
-						ui_data.traits[i],
-						ui_data.traits_sprite_url);
-
-					trait_figure_comp_preview.classList.toggle('hidden_figure');
-
-					// Add text overlay div
-					let portrait_div = trait_figure_comp_preview.firstChild;
-					let text_overlay = document.createElement('div');
-					text_overlay.className = 'text-overlay';
-					portrait_div.appendChild(text_overlay);
-
-					trait_figure.addEventListener("click", function () {
-						onclick_trait_ui(i);
-					});
-
-					trait_figure_comp_preview.addEventListener("click", function () {
-						onclick_trait_ui_comp_preview(i);
-					});
-
-					let trait_ui = {
-						figure_element: trait_figure,
-						game_index: i,
-						selected_count: 0
-					}
-
-					trait_ui_comp_preview = {
-						figure_element: trait_figure_comp_preview,
-						text_overlay_div: text_overlay
-					}
-
-					traits_ui.push(trait_ui);
-					traits_ui_comp_preview.push(trait_ui_comp_preview);
+					new_trait_cell(i);
 				}
 
+				// Bind event listeners for the ranges
 				let comp_size_range = document.getElementById('comp_size_range');
 
 				comp_size_range.addEventListener("input", function () {
@@ -805,6 +1532,14 @@
 				});
 
 				onchange_comp_size_range(comp_size_range);
+
+				let threads_range = document.getElementById('threads_range');
+
+				threads_range.addEventListener("input", function () {
+					onchange_threads_range(this);
+				});
+
+				onchange_threads_range(threads_range);
 			}
 		}
 
@@ -814,23 +1549,19 @@
 				let removed_units = [];
 				let trait_bonuses = [];
 
-				units_ui_forced.forEach(unit_ui_forced => {
-					if (unit_ui_forced.is_selected === true) {
-						forced_units.push(unit_ui_forced.game_index);
+				for (let unit_idx = 0; unit_idx < game_constants.units.length; ++unit_idx) {
+					if (is_ui_unit_forced(unit_idx)) {
+						forced_units.push(unit_idx);
+					} else if (is_ui_unit_banned(unit_idx)) {
+						removed_units.push(unit_idx);
 					}
-				});
+				}
 
-				units_ui_removed.forEach(unit_ui_removed => {
-					if (unit_ui_removed.is_selected === true) {
-						removed_units.push(unit_ui_removed.game_index);
-					}
-				});
-
-				traits_ui.forEach(trait_ui => {
-					if (trait_ui && trait_ui.selected_count > 0) {
-						trait_bonuses.push({ trait_index: trait_ui.game_index, count: trait_ui.selected_count });
-					}
-				});
+				for (let trait_idx = 0; trait_idx < game_constants.traits.length; ++trait_idx) {
+					const trait_count = get_comp_table_trait_value('preview', trait_idx);
+					if (trait_count > 0)
+						trait_bonuses.push({ trait_index: trait_idx, count: trait_count });
+				}
 
 				document.dispatchEvent(before_build_context_event);
 				return build_context(parser_module, comp_size_ui, forced_units, removed_units, trait_bonuses);
@@ -845,10 +1576,11 @@
 					const run_button = document.getElementById('runbtn');
 					run_button.disabled = true;
 					const combinations = parse_and_build_context();
-					thread_count = BigInt(document.getElementById('threads').value) + 1n;
+					thread_count = BigInt(document.getElementById('threads_range').value) + 1n;
 					const time_estimate = (12100n * combinations) / (75394027566n * thread_count);
 					log(`Evaluating ${combinations.toLocaleString()} comps. Estimated time: ~${time_estimate} secs...\n`);
 					spawn_workers_and_run();
+					start_progress_bar_animation(time_estimate);
 				}
 			}
 		}
@@ -902,9 +1634,12 @@
 								if (done_count >= thread_count) {
 									let end = performance.now();
 									log(`Complete! Execution time: ${(end - start) * 0.001} sec.`);
+									end_progress_bar_animation();
+									let result_index = 0;
 									result_buffer.results.forEach(result => {
 										let decoded_result = decode_worker_result(result.comp, result.value);
-										add_result_to_result_table(decoded_result);
+										add_result_to_result_table(decoded_result, result_index);
+										++result_index;
 									})
 								}
 							}
