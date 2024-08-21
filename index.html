@@ -9,6 +9,39 @@
 		@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 	</style>
 	<style>
+		:root {
+			--emblem: rgb(0, 151, 156);
+			--emblem-contrast: rgb(255, 255, 255);
+			--emblem-shadow: rgb(16, 68, 71);
+			--emblem-highlight: rgb(104, 250, 255);
+
+			--five-cost: rgb(236, 233, 10);
+			--five-cost-contrast: rgb(95, 51, 4);
+			--five-cost-shadow: rgb(95, 51, 4);
+			--five-cost-highlight: rgb(255, 255, 0);
+
+			--four-cost: rgb(93, 0, 199);
+			--four-cost-contrast: rgb(199, 190, 247);
+			--five-cost-shadow: rgb(21, 2, 126);
+			--four-cost-highlight: rgb(119, 0, 255);
+
+			--three-cost: rgb(0, 80, 205);
+			--three-cost-contrast: rgb(137, 229, 241);
+			--three-cost-shadow: rgb(2, 66, 126);
+			--three-cost-highlight: rgb(0, 100, 255);
+
+			--two-cost: rgb(20, 212, 52);
+			--two-cost-contrast: rgb(2, 51, 18);
+			--two-cost-shadow: rgb(2, 126, 43);
+			--two-cost-highlight: rgb(52, 212, 20);
+
+			--one-cost: rgb(233, 218, 218);
+			--one-cost-contrast: rgb(73, 25, 16);
+			--one-cost-shadow: rgb(73, 25, 16);
+			--one-cost-highlight: rgb(235, 214, 214);
+
+		}
+
 		body {
 			font-family: "Ubuntu Mono", monospace;
 			font-weight: 400;
@@ -87,83 +120,119 @@
 		}
 
 		.trait_table .trait_trow {
-			background-color: rgb(196, 196, 196);
+			background-color: var(--emblem);
 			padding: 3px;
 		}
 
-		.unit_table .unit_five_cost {
-			background-color: rgb(255, 255, 0);
+		.unit_table .title {
+			padding: 2px 0px;
+			width: 100px;
+			border-radius: 3px 3px 0px 0px;
+			display: flex;
+			justify-content: center;
+			user-select: none;
+		}
+
+		.trait_table .title {
+			padding: 2px 0px;
+			width: 100px;
+			border-radius: 3px 3px 0px 0px;
+			display: flex;
+			justify-content: center;
+			user-select: none;
+		}
+
+		.trait_table .emblem {
+			background-color: var(--emblem);
+			color: var(--emblem-contrast);
+		}
+
+		.unit_table .title:hover {
+			text-decoration: line-through;
+			cursor: pointer;
+		}
+
+		.unit_table .trow {
 			padding: 3px 0px 0px 3px;
+		}
+
+		.unit_table .unit_five_cost_header {
+			background-color: var(--emblem);
+		}
+
+		.unit_table .unit_five_cost {
+			background-color: var(--five-cost);
+			color: var(--five-cost-contrast);
 		}
 
 		.unit_table .unit_four_cost {
-			background-color: rgb(119, 0, 255);
-			padding: 3px 0px 0px 3px;
+			background-color: var(--four-cost);
+			color: var(--four-cost-contrast);
 		}
 
 		.unit_table .unit_three_cost {
-			background-color: rgb(0, 100, 255);
-			padding: 3px 0px 0px 3px;
+			background-color: var(--three-cost);
+			color: var(--three-cost-contrast);
 		}
 
 		.unit_table .unit_two_cost {
-			background-color: rgb(52, 212, 20);
-			padding: 3px 0px 0px 3px;
+			background-color: var(--two-cost);
+			color: var(--two-cost-contrast);
 		}
 
 		.unit_table .unit_one_cost {
-			background-color: rgb(235, 214, 214);
-			padding: 3px 0px 0px 3px;
+			background-color: var(--one-cost);
+			color: var(--one-cost-contrast);
 		}
 
 		.unit_five_cost figure {
-			border: 1px solid rgb(255, 255, 0);
-			box-shadow: 1px 1px 0px rgb(158, 84, 5);
-			color: rgb(158, 84, 5);
-			background-color: rgb(236, 233, 10);
+			border: 1px solid var(--five-cost-highlight);
+			box-shadow: 1px 1px 0px var(--five-cost-shadow);
+			color: var(--five-cost-contrast);
+			background-color: var(--five-cost);
 		}
 
 		.unit_four_cost figure {
-			border: 1px solid rgb(119, 0, 255);
-			box-shadow: 1px 1px 0px rgb(21, 2, 126);
-			color: rgb(199, 190, 247);
-			background-color: rgb(93, 0, 199);
+			border: 1px solid var(--four-cost-highlight);
+			box-shadow: 1px 1px 0px var(--four-cost-shadow);
+			color: var(--four-cost-contrast);
+			background-color: var(--four-cost);
 		}
 
 		.unit_three_cost figure {
-			border: 1px solid rgb(0, 100, 255);
-			box-shadow: 1px 1px 0px rgb(2, 66, 126);
-			color: rgb(137, 229, 241);
-			background-color: rgb(0, 80, 205);
+			border: 1px solid var(--three-cost-highlight);
+			box-shadow: 1px 1px 0px var(--three-cost-shadow);
+			color: var(--three-cost-contrast);
+			background-color: var(--three-cost);
 		}
 
 		.unit_two_cost figure {
-			border: 1px solid rgb(52, 212, 20);
-			box-shadow: 1px 1px 0px rgb(2, 126, 43);
-			color: rgb(3, 80, 29);
-			background-color: rgb(20, 212, 52);
+			border: 1px solid var(--two-cost-highlight);
+			box-shadow: 1px 1px 0px var(--two-cost-shadow);
+			color: var(--two-cost-contrast);
+			background-color: var(--two-cost);
 		}
 
 		.unit_one_cost figure {
-			border: 1px solid rgb(235, 214, 214);
-			box-shadow: 1px 1px 0px rgb(126, 2, 2);
-			color: rgb(126, 2, 2);
-			background-color: rgb(233, 218, 218);
+			border: 1px solid var(--one-cost-highlight);
+			box-shadow: 1px 1px 0px var(--one-cost-shadow);
+			color: var(--one-cost-contrast);
+			background-color: var(--one-cost);
 		}
 
 		.unit_dummy figure {
-			border: 1px dotted rgb(255, 255, 255);
-			box-shadow: 1px 1px 0px rgb(0, 0, 0);
-			color: rgb(255, 255, 255);
-			background-color: rgb(0, 0, 0);
+			border: 1px dotted white;
+			box-shadow: 1px 1px 0px black;
+			color: white;
+			background-color: black;
 			filter: grayscale(100%) opacity(13%);
 		}
 
 		.traits_fig_container figure {
-			border: 1px solid rgb(20, 88, 37);
-			box-shadow: 1px 1px 0px rgb(30, 49, 35);
-			color: rgb(203, 233, 185);
-			background-color: rgb(20, 88, 37);
+			border: 1px solid var(--emblem-highlight);
+			box-shadow: 1px 1px 0px var(--emblem-shadow);
+			color: var(--emblem-contrast);
+			background-color: var(--emblem);
 			margin-right: 3px;
 			margin-bottom: 1px;
 		}
@@ -315,19 +384,18 @@
 			filter: opacity(50%) grayscale(100%)
 		}
 
-		.unit_options_container_traits_preview {
-			max-height: 100%;
+		.unit_table .unit_options_container_traits_preview {
 			max-width: 16px;
 			overflow: hidden;
 			display: flex;
-			flex: 0 1 16px;
 			align-items: center;
 			justify-content: center;
-			padding-top: 1px;
+			padding: 1px;
 			margin-right: 1px;
+			margin-top: 1px;
 		}
 
-		.unit_options_container_traits_preview img {
+		.unit_table .unit_options_container_traits_preview img {
 			max-width: 100%;
 			max-height: 100%;
 			height: auto;
@@ -427,7 +495,7 @@
 		}
 
 		button:disabled {
-			opacity: 0.6;
+			opacity: 0.4;
 			cursor: progress;
 			box-shadow: none;
 		}
@@ -527,7 +595,7 @@
 			flex-direction: column;
 			justify-content: space-between;
 			align-items: flex-start;
-			padding: 80px;
+			padding: 50px;
 			box-sizing: border-box;
 		}
 
@@ -536,7 +604,7 @@
 			flex-direction: column;
 			align-items: flex-start;
 			box-sizing: border-box;
-			padding: 80px;
+			padding: 50px;
 		}
 
 		.inner_main .left .preview_container .preview_container_header {
@@ -582,7 +650,9 @@
 <body>
 
 	<header>
-		<a href="">TFT.COMPUTER</a> - <a href="https://github.com/adcgx/tft-computer-public">GITHUB</a>
+		<a href="">TFT.COMPUTER</a> -
+		<a href="https://github.com/adcgx/tft-computer-public">GITHUB</a> -
+		<a href="https://discord.gg/G35S93QH">DISCORD</a>
 	</header>
 
 	<main>
@@ -610,6 +680,7 @@
 							<div class="comp_table">
 								<div class="comp_table_units">
 									<div class="trow unit_five_cost" name="comp_table_units_column_five_cost">
+
 									</div>
 									<div class="trow unit_four_cost" name="comp_table_units_column_four_cost">
 									</div>
@@ -884,28 +955,43 @@
 			</div>
 		</div>
 
-		<div style="background-color: #1b1b1b; padding:3px 0px; overflow:hidden">
-			&nbsp;-- ADD TRAIT EMBLEMS
-		</div>
-
 		<div class="ttable trait_table" id="trait_table">
+			<div>
+				<div class="title emblem">EMBLEMS</div>
+			</div>
 			<div class="trow trait_trow traits_fig_container" id="trait_table_column">
 			</div>
 		</div>
 
-		<div style="background-color: #1b1b1b; padding:3px 0px; overflow:hidden">
-			&nbsp;-- ADD / BAN UNITS
-		</div>
-
 		<div class="ttable">
 			<div class="ttable unit_table" id="unit_table">
+
+				<div class="unit_five_cost_header">
+					<div class="title unit_five_cost" onclick="set_ui_unit_banned_by_cost(5)">5-COST UNITS</div>
+				</div>
 				<div class="trow unit_five_cost" id="unit_table_column_five_cost">
+				</div>
+
+				<div class="unit_five_cost">
+					<div class="title unit_four_cost" onclick="set_ui_unit_banned_by_cost(4)">4-COST UNITS</div>
 				</div>
 				<div class="trow unit_four_cost" id="unit_table_column_four_cost">
 				</div>
+
+				<div class="unit_four_cost">
+					<div class="title unit_three_cost" onclick="set_ui_unit_banned_by_cost(3)">3-COST UNITS</div>
+				</div>
 				<div class="trow unit_three_cost" id="unit_table_column_three_cost">
 				</div>
+
+				<div class="unit_three_cost">
+					<div class="title unit_two_cost" onclick="set_ui_unit_banned_by_cost(2)">2-COST UNITS</div>
+				</div>
 				<div class="trow unit_two_cost" id="unit_table_column_two_cost">
+				</div>
+
+				<div class="unit_two_cost">
+					<div class="title unit_one_cost" onclick="set_ui_unit_banned_by_cost(1)">1-COST UNITS</div>
 				</div>
 				<div class="trow unit_one_cost" id="unit_table_column_one_cost">
 				</div>
@@ -1048,6 +1134,28 @@
 				deselect_ui_unit_forced(unit_idx);
 				ui_unit_banned_flag |= unit_bitflag;
 				style_ui_unit_banned(unit_idx);
+			}
+
+			function set_ui_unit_banned_by_cost(unit_cost) {
+				let ban_flag_list = 0n;
+
+				for (let unit_idx = 0; unit_idx < game_constants.units.length; ++unit_idx) {
+					const game_unit = game_unit_from_index(unit_idx);
+					if (game_unit.cost != unit_cost) {
+						continue;
+					}
+					const unit_bitflag = 1n << BigInt(unit_idx);
+					ban_flag_list |= unit_bitflag;
+				}
+
+				const all_units_already_banned = ((ban_flag_list & ui_unit_banned_flag) == ban_flag_list);
+
+				for (let unit_idx = 0; unit_idx < game_constants.units.length; ++unit_idx) {
+					const game_unit = game_unit_from_index(unit_idx);
+					if (game_unit.cost == unit_cost && (!is_ui_unit_banned(unit_idx) || all_units_already_banned)) {
+						toggle_ui_unit_banned(unit_idx);
+					}
+				}
 			}
 
 			function on_click_unit_figure(unit_idx) {
@@ -1321,7 +1429,7 @@
 	</main>
 
 	<footer>
-		v0.9d SET 12 - <a
+		v0.91d SET 12 - <a
 			href="https://github.com/adcgx/tft-computer-public/tree/main?tab=License-1-ov-file#readme">LICENSE</a>
 	</footer>
 
@@ -1476,7 +1584,6 @@
 
 			// Traits:
 			{
-				console.log(table_id);
 				result.traits.forEach(result_trait => {
 					const trait_idx = result_trait.trait;
 					const extra_trait_count = get_comp_table_trait_value('preview', trait_idx);
@@ -1484,13 +1591,28 @@
 					const trait_value = game_trait_from_index(trait_idx).value;
 
 					if (trait_value.length > 0 && trait_value[Math.min(trait_count - 1, trait_value.length - 1)] > 0) {
-						console.log(game_trait_from_index(trait_idx));
 						set_comp_table_trait_value(table_id, trait_idx, trait_count);
 					}
 				});
 			}
 
 			document.getElementById(table_id).classList.toggle('hidden');
+		}
+
+		function clear_result_table() {
+			for (let i = 0; i < 10; ++i) {
+				const table_id = 'results_' + i;
+
+				for (let unit_idx = 0; unit_idx < game_constants.units.length; ++unit_idx) {
+					comp_table_util_get_unit(table_id, unit_idx).classList.add('hidden');
+				}
+
+				for (let trait_idx = 0; trait_idx < game_constants.traits.length; ++trait_idx) {
+					set_comp_table_trait_value(table_id, trait_idx, 0);
+				}
+
+				document.getElementById(table_id).classList.add('hidden');
+			}
 		}
 
 		function cost_string(cost) {
@@ -1515,13 +1637,13 @@
 		function init_tables() {
 			if (game_constants && ui_data) {
 				// Fill out various unit tables...
-				for (let i = 0; i < game_constants.units.length; ++i) {
-					new_unit_cell(i);
+				for (let unit_idx = 0; unit_idx < game_constants.units.length; ++unit_idx) {
+					new_unit_cell(unit_idx);
 				}
 
 				// Fill out bonus trait table
-				for (let i = 0; i < game_constants.traits.length; ++i) {
-					new_trait_cell(i);
+				for (let trait_idx = 0; trait_idx < game_constants.traits.length; ++trait_idx) {
+					new_trait_cell(trait_idx);
 				}
 
 				// Bind event listeners for the ranges
@@ -1581,6 +1703,7 @@
 					log(`Evaluating ${combinations.toLocaleString()} comps. Estimated time: ~${time_estimate} secs...\n`);
 					spawn_workers_and_run();
 					start_progress_bar_animation(time_estimate);
+					clear_result_table();
 				}
 			}
 		}
@@ -1625,7 +1748,6 @@
 						let done_count = 0;
 
 						for (let i = 0n; i < BigInt(worker_list.length); ++i) {
-
 							worker_list[i].onmessage = function (event) {
 								++done_count;
 								event.data.results.forEach(result => {
@@ -1633,13 +1755,26 @@
 								})
 								if (done_count >= thread_count) {
 									let end = performance.now();
-									log(`Complete! Execution time: ${(end - start) * 0.001} sec.`);
+									log(`Complete! Execution time: ${(end - start) * 0.001} sec.\n`);
 									end_progress_bar_animation();
 									let result_index = 0;
 									result_buffer.results.forEach(result => {
 										let decoded_result = decode_worker_result(result.comp, result.value);
 										add_result_to_result_table(decoded_result, result_index);
 										++result_index;
+									});
+
+									// Reset the parser module:
+									load_module_and_instantiate(parser_module_path).then(new_parser_module => {
+										parser_module = new_parser_module;
+										try_enable_button();
+									}).catch(error => {
+										console.error('Error loading parser module:', error);
+									});
+
+									worker_list.forEach(worker => {
+										// Required or else workers will not be garbage collected
+										worker.terminate();
 									})
 								}
 							}
