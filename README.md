@@ -1,1 +1,1 @@
-TFT.computer is tool to search for potential comps in Teamfight Tactics by Riot Games.
+TFT Computer is a powerful theorycrafting tool for Teamfight Tactics by Riot Games. Explore new comps & synergies by filtering for key units, traits & emblems.
